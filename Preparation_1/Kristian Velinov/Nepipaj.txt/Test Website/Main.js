@@ -32,3 +32,6 @@ let slideIndex = 0;
             slideIndex++;
             showSlides();
         }, 3000); 
+
+//Az bqh tuk
+
