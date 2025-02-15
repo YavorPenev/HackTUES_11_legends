@@ -1,0 +1,145 @@
+body {
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+  ),
+  url('path_to_your_car_repair_image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+  
+  .navbar {
+    background-color: #345;
+    overflow:hidden;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: red;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+  }
+  
+  .Drop {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .Drop .Dropdown {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: red;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .Dropdownc {
+    display: none;
+    position: absolute;
+    background-color: rgb(31, 35, 34);
+    min-width: 160px;
+  }
+  
+  .Dropdownc a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .Dropdownc a:hover {
+    background-color: #ddd;
+  }
+  
+  .Drop:hover .Dropdownc {
+    display: block;
+  }
+
+  .Carousel-wrap{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .Carousel{
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-radius: 6px;
+    width:40vw;
+  }
+  .Carousel img{
+    flex: 1 0 100%;
+    scroll-snap-align: restart;
+    object-fit: cover;
+  }
+
+  .Carousel-navigation{
+    display:flex;
+    column-gap: 1rem;
+    position:absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  .Carousel-navigation a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+  }
+
+  .Carousel-navigation a:hover{
+    opacity: 1;
+  }
+
+  .Carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .Main{
+    margin-top: 50px;
+    padding-top: 50px;
+  }
+
+  h1{
+    padding-left: 70px;
+  }
+
+  .pictext img{
+    width: 40%;
+  }
+  
+  .pictext{
+    margin-top: 50px;
+    overflow: hidden;
+  }
+  
+  h3{
+    font-family: 'Aleo', sans-serif;
+  }
+
+  .footer{
+    background-color: red;
+    bottom: 0;
+  }
