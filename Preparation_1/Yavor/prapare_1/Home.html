@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0">
+    <title>Relaxi.bg</title>
+    <link rel="stylesheet" href="site.css">
+    <script src="home.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="home.html">
+            <img class="flex-item" id="logo" src="photos/logo.png" width="65px" title="Back to home">
+        </a>
+
+        <h1 class="flex-item" id="name" title="Relaxi">&nbsp;Relaxi.bg<sup></sup></h1>
+
+        <div class="dropdown">
+            <button class="button dropdown-toggle dropbtn" type="button"><b>Menu</b></button>
+            <div class="dropdown-content">
+                <a href="destinstion.html"><b>Destination</b></a>
+                <a href="transport.html"><b>Transport</b></a>
+            </div>
+        </div>
+
+        <button id="contact" class="flex-item"><b>Контакти</b></button>
+
+        <div id="contactModal" class="modal">
+            <div class="window">
+                <span class="close">&times;</span>
+                <h2>Контакти</h2>
+                <p><strong>📞 Телефон:</strong> +359 123 456 789</p>
+                <p><strong>📧 Имейл:</strong> relaxibg@gmail.com</p>
+                <p><strong>📍 Адрес:</strong> ул. "Витошка" №6, София, България</p>
+            </div>
+        </div>
+
+        <a href="about.html">
+            <button class="flex-item button dropbtn:hover" title="About our team."
+                id="about"><b>About&nbsp;us</b></button>
+        </a>
+
+    </header>
+
+<div id="home_page">
+
+    <div class="parent1">
+
+        <a  class="prev" onclick="plusSlides(-1)">&#10094</a>
+      
+        <div class="slideshow-container">
+      
+      
+          <div class="mySlides" >
+              <div class="numbertext">1 / 3</div>
+              <img  id="image-slide" src="photos/carosel1.png">
+              <div class="text"><b>Holiday next to the beach!</b></div>
+          </div>
+      
+          <div class="mySlides ">
+              <div class="numbertext">2 / 3</div>
+              <img  id="image-slide" src="photos/carosel2.png">
+              <div class="text"><b>Trip in Amazonia!</b></div>
+          </div>
+      
+          <div class="mySlides ">
+              <div class="numbertext">3 / 3</div>
+              <img id="image-slide" src="photos/carosel3.png">
+              <div class="text"><b>Adventure in the ice fields</b></div>
+          </div>
+        </div>
+      
+      
+        <a  class="next" onclick="plusSlides(+1)">&#10095</a>
+      
+        <div style="text-align:center">
+           <span class="dot" onclick="currentSlide(1)"></span>
+           <span class="dot" onclick="currentSlide(2)"></span>
+           <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div> 
+   
+    <div id="destination">
+        <a href="destinstion.html" ><img src="photos/destinations.png" id="destination_img"  height="auto" width="500%"></a>
+        <div>
+          <p id="destination_text"><b>Нашата ваканционна агенция предлага разнообразие от дестинации, които ще задоволят всеки вкус и предпочитание. Независимо дали търсите спокойствие на плажа, приключения в планините или културно обогатяване в градове, богати на история, ние имаме нещо за вас. Нашите оферти включват екзотични места с топли пясъци и кристално чисти води, идеални за релакс и почивка. За любителите на природата предлагаме планински курорти с прекрасни гледки и възможности за пешеходен туризъм. Ако предпочитате градските пейзажи, може да изберете от разнообразните ни оферти за европейски столици, където можете да се насладите на архитектура, музеи и кулинарни изкушения. Нашата цел е да ви предложим най-доброто от всяка дестинация, като същевременно запазим автентичността и уникалността на всяко място.</b></p>
+        </div>
+    </div>
+
+    <div id="transport">
+        <a href="transport.html"><img src="photos/travel.png" id="transport_img" height="auto" width="00%"></a>
+        <div>
+           <p id="transport_text"><b>Пътуването до вашата мечтана дестинация е също толкова важно, колкото и самата почивка. Затова ние предлагаме различни варианти за транспорт, които да отговорят на вашите нужди и предпочитания. За по-бързо и удобно пътуване можете да изберете полети с редовни или чартърни линии до най-популярните дестинации. Ако предпочитате по-спокойно и сценично пътуване, предлагаме железопътни и автобусни трансфери, които ви позволяват да се насладите на красивите пейзажи по пътя. За тези, които обичат независимостта, имаме възможности за наемане на автомобили, което ви дава свободата да изследвате дестинацията в свой собствен ритъм. Независимо какъв транспорт изберете, ние се грижим за вашето удобство и безопасност, за да започнете ваканцията си с лекота и спокойствие.</b></p>
+        </div>
+    </div>
+
+</div>
+
+    <footer>
+        <div id="info">
+            <p>2025 Relaxi.bg Контакти:</p>
+            <p>tel: +359 123 456 789 </p>
+            <p>email: relaxibg@gmail.com</p>
+            <p>Legends enterprises<sup>®</sup></p>
+        </div>
+
+        <div id="location">
+            <p>You can find us:</p>
+             <img src="photos/location.png" id="location_photo">
+        </div>
+
+        <div id="navi">
+
+            <p>Navigation:</p>
+            <a href="Home.html" id="footer_button" title="Back to home page.">-Home </a>
+
+            <a href="destinstion.html" id="footer_button" title="View our best destinations.">-Destinations</a>
+
+            <a href="transport.html" id="footer_button" title="What transport woud you chose?">-Transports</a>
+
+            <a href="about.html" id="footer_button" title="About our team.">-About our team</a>
+        </div>
+
+    </footer>
+</body>
+
+</html>

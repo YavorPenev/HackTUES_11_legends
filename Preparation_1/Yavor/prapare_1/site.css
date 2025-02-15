@@ -1,0 +1,486 @@
+body {
+    background: #F2E5BD;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 0.5%;
+    padding-bottom: 0.1%;
+    background-color: rgb(232, 255, 229);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 980px) {
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        background-color: #333;
+        color: white;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.button {
+
+    color: #E39774;
+    background-color: rgb(232, 255, 229);
+    font-size: 150%;
+    border: none;
+
+}
+
+.dropdown {
+    margin-left: 50%;
+    margin-right: 5%;
+    position: relative;
+    display: inline-block;
+}
+
+@media (max-width: 980px) {
+    .dropdown {
+        margin-left: 40%;
+        margin-right: 5%;
+        position: relative;
+        display: inline-block;
+    }
+}
+
+.dropdown-content {
+    display: none;
+    background-color: rgb(204, 239, 198);
+    min-width: 160px;
+    position: absolute;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: #ce8360;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(190, 214, 186);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn:hover {
+    background-color: rgb(204, 239, 198);
+}
+
+
+#name {
+    font-size: 150%;
+    color: #E39774;
+}
+
+#logo {
+    margin-left: 6%;
+}
+
+#about {
+    margin-right: 10%;
+}
+
+#team {
+    margin-top: 3%;
+}
+
+#team_text {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 3%;
+}
+
+#team_text1 {
+    margin-left: 2%;
+}
+
+#home_page {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#dest_page {
+    display: flex;
+    flex-direction: row;
+    background-image: url("photos/backgroundDES.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 4%;
+    border-radius: 6px;
+
+}
+
+#dest_page1 {/*Голяма излагация*/
+    display: flex;
+    flex-direction: row;
+    background-image: url("photos/backgroundDES.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 4%;
+    margin-top: 3%;
+    border-radius: 6px;
+}
+
+#about_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 980px) {
+    .splide__slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+#destination {
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    background-image: url("photos/backgroundSEC.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#destination_img {
+    margin: 8%;
+
+}
+
+#dest_img {
+    margin: 2%;
+    border: none;
+    border-radius: 6px;
+}
+
+#dest_text {
+    margin-left: 3%;
+}
+
+#destination_text {
+    width: 60%;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 38%;
+}
+
+#transport {
+    border-radius: 6px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    background-image: url("photos/backgroundSEC.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#transport_img {
+    margin: 8%;
+}
+
+@media (max-width: 980px) {
+    #transport_img {
+        margin: 10%;
+        height: 98%;
+    }
+
+    #destination_img {
+        margin: 10%;
+        height: 98%;
+    }
+}
+
+#transport_text {
+    width: 60%;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 38%;
+}
+
+
+#contact {
+    background-color: rgb(232, 255, 229);
+    color: #E39774;
+    border: none;
+    margin-right: 4%;
+    font-size: 150%;
+}
+
+#footer_button {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    #info {
+        display: flex;
+        width: 25%;
+        flex-direction: column;
+        margin-left: 3%;
+        margin-right: 0;
+    }
+
+    #location {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 70%;
+        gap: 7%;
+    }
+
+    #location_photo {
+        width: 70%;
+    }
+
+    #navi {
+        display: flex;
+        flex-direction: column;
+        width: 22%;
+        margin-right: 1%;
+        gap: 3%;
+    }
+
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-left: 3%;
+    margin-right: 4%;
+}
+
+#location {
+    display: flex;
+    flex-direction: column;
+}
+
+#location_photo {
+    width: 40%;
+}
+
+#navi {
+    display: flex;
+    flex-direction: column;
+    width: 11%;
+    margin-right: 1%;
+    gap: 3%;
+}
+
+#footer_button:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    /* Скрито по подразбиране */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачен черен фон */
+}
+
+/* Стил за съдържанието на модала */
+.window {
+    background-color: #ffffff;
+    margin: 15% auto;
+    /* Центриране вертикално */
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+/* Анимация за появяване */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стил за бутона за затваряне */
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Стил за текста в модала */
+.window p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.parent1{
+    margin: 5px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.slideshow-container {
+    max-width: 1300px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 10px;
+
+    display: inline-block;
+
+
+  }
+
+
+  .mySlides {
+    display: inline;
+
+  }
+
+  #image-slide{
+      width: 700px;
+      height: 400px;
+  }
+
+  img{
+    vertical-align: center;
+    border-radius: 6px;
+    
+    
+  }
+
+
+  .prev, .next {
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    width: auto;
+    margin-top: -20px;
+    padding: 16px;
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+
+  .next {
+    right: 310px;
+    border-radius: 5px;
+    display: block;
+    float: right;
+    top: 190px;
+  }
+
+  .prev{
+    left: 300px;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    top: 190px;
+  }
+
+ 
+
+  .text {
+    color: rgb(0, 0, 0);
+    font-size: 190%;
+    padding: 10px;
+    position: absolute;
+    width: 95%;
+    text-align: center;
+    bottom: -10px;  background-color: #d5cd6d;
+  
+  }
+
+
+  .numbertext {
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background-color:#E39774;
+  }
+
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    align-content: center;
+
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
