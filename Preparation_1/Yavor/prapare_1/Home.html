@@ -45,42 +45,41 @@
     </header>
 
 <div id="home_page">
+</head>
 
-    <div class="parent1">
+<div class="carousel">
+    <img src="photos/carosel1.png" alt="Image 1" class="active">
+    <img src="photos/carosel2.png" alt="Image 2">
+    <img src="photos/carosel3.png" alt="Image 3">
+    <button class="arrow left" onclick="prevImage()">&#10094;</button>
+    <button class="arrow right" onclick="nextImage()">&#10095;</button>
+</div>
 
-        <a  class="prev" onclick="plusSlides(-1)">&#10094</a>
-      
-        <div class="slideshow-container">
-      
-      
-          <div class="mySlides" >
-              <div class="numbertext">1 / 3</div>
-              <img  id="image-slide" src="photos/carosel1.png">
-              <div class="text"><b>Holiday next to the beach!</b></div>
-          </div>
-      
-          <div class="mySlides ">
-              <div class="numbertext">2 / 3</div>
-              <img  id="image-slide" src="photos/carosel2.png">
-              <div class="text"><b>Trip in Amazonia!</b></div>
-          </div>
-      
-          <div class="mySlides ">
-              <div class="numbertext">3 / 3</div>
-              <img id="image-slide" src="photos/carosel3.png">
-              <div class="text"><b>Adventure in the ice fields</b></div>
-          </div>
-        </div>
-      
-      
-        <a  class="next" onclick="plusSlides(+1)">&#10095</a>
-      
-        <div style="text-align:center">
-           <span class="dot" onclick="currentSlide(1)"></span>
-           <span class="dot" onclick="currentSlide(2)"></span>
-           <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-      </div> 
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+    }
+
+    setInterval(nextImage, 2000);
+
+    showImage(currentIndex);
+</script>
    
     <div id="destination">
         <a href="destinstion.html" ><img src="photos/destinations.png" id="destination_img"  height="auto" width="500%"></a>
