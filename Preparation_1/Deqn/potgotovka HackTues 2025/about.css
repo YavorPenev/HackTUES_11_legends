@@ -1,0 +1,95 @@
+body{
+    background-color: aqua;
+}
+.header{
+    background-color: #000000;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 15px;
+}
+.name{
+    font-size: 70px;
+    font-family:courier;
+    text-align: center;
+    color: aqua;
+}
+.pname{
+    font-size: 30px;
+    font-family: courier;
+    text-align: center;
+    color: aqua;
+}
+.dropdown {
+    float: right;
+    margin-top: -150px;
+    margin-right: 130px;
+    font-size: 30px;
+}
+.dropdown .dropbtn {
+    font-size: 40px;
+    border: none;
+    color: aqua;
+    padding: 14px 16px;
+    background-color: #000000;
+    margin: 0;
+}
+.dropdown:hover .dropbtn {
+    background-color: aqua;
+    color:#000000;
+}
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 132px;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 0px 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: aqua;
+    color: #000000;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.img1{
+    width: 150px;
+    height: 200px;
+    margin-bottom: -150px;
+    margin-left: 130px;
+}
+.footer{
+    background-color: #eee;
+    margin-bottom: -11px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 30px;
+    color: #888;
+}
+.fname{
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+}
+.img2{
+    width: 120px;
+    height: 150px;
+    margin-top: -100px;
+    margin-left: 130px;
+}
+.email{
+    text-align: right;
+    margin-top: -100px;
+}
+.tel{
+    text-align: right;
+}
+.textt{
+    text-align: right;
+}
