@@ -5,6 +5,12 @@ function nextslide(step) {
     ShowSlide();
 }
 
+function ButtSlide(input)
+{
+    slideindex = input;
+    ShowSlide();
+}
+
 function ShowSlide() {
     let slides = document.getElementsByClassName("slide");
 
