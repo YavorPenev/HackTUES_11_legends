@@ -14,6 +14,9 @@ header {
 #input_box {
     padding: 5px;
     font-size: 16px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 #logo
@@ -26,11 +29,11 @@ header {
  }
 
 .dropdown {
-    margin-left: 6%;
     margin-right: 3%;
     position: relative;
     display: inline-block;
 }
+
 
 .dropdown-content {
     display: none;
@@ -45,6 +48,17 @@ header {
     transform: translateX(-50%);
 }
 
+.dropdown-content a {
+    color: rgb(78, 57, 30); /* Или друг цвят, който да пасва на дизайна */
+    text-decoration: none; /* Премахва подчертаването */
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdown-content a:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 .dropdown_button
 {
     font-size: 120%;
@@ -54,8 +68,13 @@ header {
 
 #search_icon
 {
-    margin-left: 0.5%;
-    margin-right: 6%;
+    padding: 0.43%;
+    margin-left: 0;
+    border-width: 0.1%;
+    background-color: rgb(255, 255, 255);
+    margin-right: 4%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 .dropdown:hover .dropdown-content{
