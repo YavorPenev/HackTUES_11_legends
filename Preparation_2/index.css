@@ -56,5 +56,16 @@ footer {
     align-items: center;
     background-color: rgb(237, 196, 62);
     border-top: 5px solid rgb(234, 183, 15);
-    padding-left: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
+}
+
+.footerlink{
+    color: inherit;
+    text-decoration: none;
+}
+
+.footerlink:hover{
+    text-decoration: underline;
 }
