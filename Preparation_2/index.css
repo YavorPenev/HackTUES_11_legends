@@ -93,6 +93,55 @@ header {
     background-color: rgb(237, 196, 62);
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+    padding-left: 13%;
+    padding-right: 13%;
+}
+
+#prev
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: black;
+    font-size: 2em;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    left: 5%;
+    height: 60px;
+    width: 60px;
+
+}
+
+#next
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: black;
+    font-size: 2em;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    right: 5%;
+    height: 60px;
+    width: 60px;
+
+}
+
+#prev:hover{
+    background-color: rgb(255, 225, 128);
+}
+
+#next:hover{
+    background-color: rgb(255, 225, 128);
 }
 
 .slide {
