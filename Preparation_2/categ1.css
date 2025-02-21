@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    background-color: rgb(237, 196, 62)
+    background-color: rgb(237, 196, 62);
+    padding-top: 80px;
     
 }
 
@@ -12,7 +13,7 @@ body {
     text-align: center;
     font-size: 300%;
     margin-bottom: 0;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .category {
@@ -78,8 +79,8 @@ body {
 
 /* Специфични размери на снимките */
 .snimka {
-    margin-right: 5%;
-    height: 102%;
+    margin-right: 10%;
+    height: 134%;
     width: 100%;
 }
 
@@ -207,6 +208,10 @@ display: block;
 
 #zaglavie4{
     margin-top: -4%;
+}
+
+#zaglavie{
+    margin-top: 56%;
 }
 
 
