@@ -51,5 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
 setInterval(() => {
     slideindex++;
     ShowSlide();
+<<<<<<< HEAD
 }, 4000);
+=======
+}, 3000);
+>>>>>>> faf1f857fcb80fe06500db2b2b481c5306ca96b8
 
