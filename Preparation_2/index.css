@@ -49,3 +49,12 @@ header {
 .dropdown:hover .dropdown-content{
 display: block;
 }
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(237, 196, 62);
+    border-top: 5px solid rgb(234, 183, 15);
+    padding-left: 8%;
+}
