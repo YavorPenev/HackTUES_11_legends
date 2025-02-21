@@ -47,5 +47,14 @@ header {
 }
 
 .dropdown:hover .dropdown-content{
+background-color: rgb(237, 196, 62);
 display: block;
+}
+
+.profile
+{
+    background-color: rgb(237, 196, 62);
+    border: solid;
+    padding: 45%;
+    border-radius: 100%;
 }
