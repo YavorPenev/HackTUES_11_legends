@@ -47,10 +47,10 @@ header {
 }
 
 .dropdown:hover .dropdown-content{
+background-color: rgb(237, 196, 62);
 display: block;
 }
-
-footer {
+.footer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -68,4 +68,12 @@ footer {
 
 .footerlink:hover{
     text-decoration: underline;
+}
+
+.profile
+{
+    background-color: rgb(237, 196, 62);
+    border: solid;
+    padding: 45%;
+    border-radius: 100%;
 }
