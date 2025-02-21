@@ -48,6 +48,12 @@ header {
     border:none;
 }
 
+#search_icon
+{
+    margin-left: 0.5%;
+    margin-right: 6%;
+}
+
 .dropdown:hover .dropdown-content{
 background-color: rgb(237, 196, 62);
 display: block;
