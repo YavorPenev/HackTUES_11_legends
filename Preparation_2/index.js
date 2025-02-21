@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function ()
 setInterval(() => {
     slideindex++;
     ShowSlide();
-}, 300000);
+}, 3000);
 
 ShowSlide();
 
