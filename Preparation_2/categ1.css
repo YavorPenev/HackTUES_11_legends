@@ -78,8 +78,8 @@ body {
 
 /* Специфични размери на снимките */
 .snimka {
-    margin-right: 5%;
-    height: 102%;
+    margin-right: 10%;
+    height: 134%;
     width: 100%;
 }
 
@@ -207,6 +207,10 @@ display: block;
 
 #zaglavie4{
     margin-top: -4%;
+}
+
+#zaglavie{
+    margin-top: 56%;
 }
 
 
