@@ -5,14 +5,14 @@ function nextslide(step) {
     ShowSlide();
 }
 
-function ButtSlide(input)
-{
+function ButtSlide(input){
     slideindex = input;
     ShowSlide();
 }
 
 function ShowSlide() {
     let slides = document.getElementsByClassName("slide");
+    let buttons = document.getElementsByClassName("navbutt");
 
     if (slideindex >= slides.length) {
         slideindex = 0;
@@ -23,19 +23,26 @@ function ShowSlide() {
     }
 
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        slides[i].style.transform = 'translateX(100%)';
+        slides[i].style.opacity = 0; 
     }
 
-    slides[slideindex].style.display = "flex"; 
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    buttons[slideindex].classList.add("active");
+
+    slides[slideindex].style.transform = 'translateX(0)';
+    slides[slideindex].style.opacity = 1;
 }
 
-document.addEventListener("DOMContentLoaded", function () 
-{
+document.addEventListener("DOMContentLoaded", function () {
     let slides = document.getElementsByClassName("slide");
 
-    for (let i = 0; i < slides.length; i++) 
-    {
-        slides[i].style.display = "none";
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.transform = 'translateX(100%)';
+        slides[i].style.opacity = 0;
     }
 
     ShowSlide();
@@ -44,7 +51,5 @@ document.addEventListener("DOMContentLoaded", function ()
 setInterval(() => {
     slideindex++;
     ShowSlide();
-}, 3000);
-
-ShowSlide();
+}, 300000);
 
