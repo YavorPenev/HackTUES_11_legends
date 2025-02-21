@@ -175,35 +175,6 @@ background-color: rgb(237, 196, 62);
 display: block;
 }
 
-#carousel-container{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
-    padding: 4% 4% 4% 4%;
-    background-color: rgb(237, 196, 62);
-    border-radius: 10px;
-}
-
-.slide
-{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3%;
-    flex-wrap: nowrap;
-}
-
-.car_link{
-    max-width: 40%;
-    height: auto;
-    display: block;
-}
-
-.car_picture{
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-}
 
 .bookinfo{
     flex: 1;
@@ -213,26 +184,6 @@ display: block;
 #s1
 {
     display: block;
-}
-
-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(237, 196, 62);
-    border-top: 5px solid rgb(234, 183, 15);
-    padding-left: 5%;
-    padding-right: 5%;
-    justify-content: space-between;
-}
-
-.footerlink{
-    color: inherit;
-    text-decoration: none;
-}
-
-.footerlink:hover{
-    text-decoration: underline;
 }
 
 .profile
