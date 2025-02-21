@@ -40,7 +40,6 @@ header {
     display: inline-block;
 }
 
-
 .dropdown-content {
     display: none;
     background-color: rgb(237, 196, 62);
@@ -88,7 +87,7 @@ header {
     display: block;
 }
 
-#carousel-container {
+.carousel {
     margin: 5%;
     padding: 4%;
     background-color: rgb(237, 196, 62);
@@ -99,35 +98,43 @@ header {
 .slide {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content:space-evenly;
+    align-items: center; 
     flex-wrap: nowrap;
     margin-bottom: 20px;
+    width: 100%;
+    gap: 10%;
 }
 
 .car_link {
-    width: 45%;
-    display: block;
+    width: 25%;
+    height:auto;
 }
 
 .car_picture {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+    max-width: 100%; /* Make the image responsive */
+    width: 100%; /* Make sure the image fills the container */
+    object-fit: contain; /* Ensure the image doesn't stretch/distort */
     border-radius: 5px;
 }
 
 .bookinfo {
-    flex: 1;
-    display: block;
+    flex-grow: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%; 
+    box-sizing: border-box; 
 }
 
 .bookinfo h1 {
     margin: 0;
-    font-size: 3.5em;
+    font-size: 2.5em; 
 }
 
 .bookinfo p {
-    font-size: 2em;
+    font-size: 1.5em; 
 }
 
 footer {
