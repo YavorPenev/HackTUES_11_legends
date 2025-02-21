@@ -50,7 +50,9 @@ header {
 background-color: rgb(237, 196, 62);
 display: block;
 }
-.footer {
+
+
+footer {
     display: flex;
     flex-direction: row;
     align-items: center;
