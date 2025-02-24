@@ -54,7 +54,7 @@ setInterval(() => {
 }, 10000);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////*↑ END OF FIRST CAROUSEL ↑;; ↓START OF SECOND CAROUSEL↓*/////////////////////////////////////
+////////////////////////////*↑ END OF FIRST CAROUSEL ↑;; ↓START OF SECOND CAROUSEL↓*///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -63,12 +63,39 @@ let slideindex2 = 0;
 
 function nextslide2(step2) {
     slideindex2 += step2;
-    ShowSlide();
+    ShowSlide2();
 }
 
 function ButtSlide2(input2){
     slideindex2 = input2;
-    ShowSlide();
+    ShowSlide2();
+}
+
+function ShowSlide2() {
+    let slides2 = document.getElementsByClassName("slide-2");
+    let buttons2 = document.getElementsByClassName("navbutt-2");
+
+    if (slideindex2 >= slides2.length) {
+        slideindex2 = 0;
+    }
+
+    if (slideindex2 < 0) {
+        slideindex2 = slides2.length - 1;
+    }
+
+    for (let i = 0; i < slides2.length; i++) {
+        slides2[i].style.transform = 'translateX(100%)';
+        slides2[i].style.opacity = 0; 
+    }
+
+    for (let i = 0; i < buttons2.length; i++) {
+        buttons2[i].classList.remove("active");
+    }
+
+    buttons2[slideindex2].classList.add("active");
+
+    slides2[slideindex2].style.transform = 'translateX(0)';
+    slides2[slideindex2].style.opacity = 1;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
