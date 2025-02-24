@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slides2[i].style.opacity = 0;
     }
 
-    ShowSlide();
+    ShowSlide2();
 });
 
 
