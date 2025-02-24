@@ -283,6 +283,167 @@ header {
     margin-top: 5%;
 }
 
+.carousel-2 {
+    margin: 5%;
+    padding: 4%;
+    background-color: rgb(237, 196, 62);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 13%;
+    padding-right: 13%;
+    aspect-ratio: 16/9;
+}
+
+.slide-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 7%;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+    height: fit-content;
+    overflow: hidden;
+    padding-right: 5%;
+}
+
+.car_link-2 {
+    width: 25%;
+    height: auto;
+}
+
+.car_picture-2 {
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.bookinfo-2 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    width: 40%; 
+    box-sizing: border-box;
+    overflow: hidden; 
+    height: 100%;
+    margin-right: 30%;
+}
+
+.bookinfo-2 h1 {
+    margin: 0;
+    font-size: 2.5em; 
+}
+
+.bookinfo-2 p {
+    font-size: 1.5em; 
+    white-space: normal;
+    overflow: hidden;
+}
+
+#prev-2, #next-2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: black;
+    font-size: 2em;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+#prev-2 {
+    left: 5%;
+}
+
+#next-2 {
+    right: 5%;
+}
+
+#prev-2:hover, #next-2:hover {
+    background-color: rgb(255, 225, 128);
+}
+
+.box-navbutt-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: center;
+    position: absolute; 
+    bottom: 3%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 5; 
+}
+
+.navbutt-2{
+    background-color: rgba(69, 69, 69, 0.321);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.navbutt-2:hover {
+    background-color: rgba(69, 69, 69, 0.786);
+}
+
+.navbutt-2.active {
+    background-color: rgba(69, 69, 69, 0.786);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
     display: flex;
     flex-direction: row;
