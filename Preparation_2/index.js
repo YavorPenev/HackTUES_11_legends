@@ -51,6 +51,36 @@ document.addEventListener("DOMContentLoaded", function () {
 setInterval(() => {
     slideindex++;
     ShowSlide();
-}, 4000);
+}, 10000);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////*↑ END OF FIRST CAROUSEL ↑;; ↓START OF SECOND CAROUSEL↓*/////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+let slideindex2 = 0;
+
+function nextslide2(step2) {
+    slideindex2 += step2;
+    ShowSlide();
+}
+
+function ButtSlide2(input2){
+    slideindex2 = input2;
+    ShowSlide();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    let slides2 = document.getElementsByClassName("slide-2");
+
+    for (let i = 0; i < slides2.length; i++) {
+        slides2[i].style.transform = 'translateX(100%)';
+        slides2[i].style.opacity = 0;
+    }
+
+    ShowSlide();
+});
+
 
 
