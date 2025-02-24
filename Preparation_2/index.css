@@ -227,20 +227,19 @@ header {
 .category {
     display: flex;
     justify-content: center;
-    background-color: white;
-    padding: 2%;
+    padding: 1%;
     margin-top: 3%;
     flex-wrap: wrap;
 }
 
 .conteiner{
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15%;
-    background-color: #e2e2e2;
+    width: 20%;
+    background-color: #d0d0d0;
     padding: 3%;
-    margin: 1%;
 }
 
 footer {
