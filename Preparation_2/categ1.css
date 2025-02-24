@@ -38,181 +38,20 @@ body {
 
 .text{
     text-align: center;
-    width: 80%;
-    margin-top: 8%;
 }
 
-.text1{
-    text-align: center;
-    width: 100%;
-    margin-top: 10%;
-}
-
-
-.text2{
-    text-align: center;
-    width: 100%;
-    margin-top: 20%;
-}
-
-
-.text3{
-    text-align: center;
-    width: 100%;
-    margin-top: 14%;
-}
-
-
-#avtor {
-    margin-bottom: 15%;
-}
-
-#zaglavie3{
-    margin-top: -10.5%;
-}
 
 .snimka, .snimka2, .snimka3, .snimka4 {
     width: 90%;
     height: auto; /* Запазва пропорциите на изображенията */
     margin: 0 auto; /* Центрира изображенията хоризонтално */
-}
-
-/* Специфични размери на снимките */
-.snimka {
-    margin-right: 10%;
-    height: 134%;
-    width: 100%;
-}
-
-.snimka2 {
-    height: 115%;
-    width: 100%;
-}
-
-.snimka3 {
-    height: 96%;
-    width: 100%;
-}
-
-.snimka4 {
-    height: 96%;
-    width: 100%;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(237, 196, 62);
-    border-bottom: 5px solid rgb(234, 183, 15);
-    margin-bottom: 50px;
-}
-
-#input_box {
-    padding: 5px;
-    font-size: 16px;
-    border: none;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-}
-
-#logo
-{
-    margin-left: 4%;
-}
-
-#name{
-    margin-right: 46%;
-    font-size: 190%;
- }
-
-.dropdown {
-    margin-right: 3%;
-    position: relative;
-    display: inline-block;
+    margin-left: 5%;
 }
 
 
-.dropdown-content {
-    display: none;
-    background-color: rgb(192, 146, 60);
-    min-width: 160px;
-    position: absolute;
-    border: none;
-    text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dropdown-content a {
-    color: rgb(78, 57, 30); /* Или друг цвят, който да пасва на дизайна */
-    text-decoration: none; /* Премахва подчертаването */
-    display: block;
-    padding: 5px 10px;
-}
-
-.dropdown-content a:hover {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown_button
-{
-    font-size: 120%;
-    background-color: rgb(237, 196, 62);
-    border:none;
-}
-
-#search_icon
-{
-    padding: 0.43%;
-    margin-left: 0;
-    border-width: 0.1%;
-    background-color: rgb(255, 255, 255);
-    margin-right: 4%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-
-.dropdown:hover .dropdown-content{
-background-color: rgb(237, 196, 62);
-display: block;
-}
 
 
-.bookinfo{
-    flex: 1;
-    display: block;
-}
 
-#s1
-{
-    display: block;
-}
-
-.profile
-{
-    background-color: rgb(237, 196, 62);
-    border: solid;
-    padding: 45%;
-    padding-left: 60%;
-    padding-right: 60%;
-    border-radius: 100%;
-}
-
-#zaglavie2{
-    margin-top: 25%;
-}
-
-
-#zaglavie4{
-    margin-top: -4%;
-}
-
-#zaglavie{
-    margin-top: 56%;
-}
 
 
 
