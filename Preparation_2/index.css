@@ -207,6 +207,25 @@ header {
     background-color: rgba(69, 69, 69, 0.786);
 }
 
+.category {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 2%;
+    margin-top: 3%;
+    flex-wrap: wrap;
+}
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    background-color: #e2e2e2;
+    padding: 3%;
+    margin: 1%;
+}
+
 footer {
     display: flex;
     flex-direction: row;
