@@ -25,14 +25,17 @@ body {
     flex-wrap: wrap; /* Позволява на елементите да се преместват на нов ред, ако е необходимо */
 }
 
-.conteiner, .conteiner2, .conteiner3, .conteiner4 {
+.conteiner{
     display: flex;
     flex-direction: column;
     align-items: center; /* Центриране на съдържанието вътре в контейнера */
     width: 15%;
     background-color: #e2e2e2;
     padding: 3%;
-    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     background-color: rgb(237, 196, 62);
 }
 
