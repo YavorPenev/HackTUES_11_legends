@@ -9,6 +9,19 @@ body {
     
 }
 
+.img-size {
+    width: 190px;  
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .bookpage {
+    width: 190px;
+    height: 300px;
+    overflow: hidden; 
+    align-items: center;
+}
+
 .bel {
     text-align: center;
     font-size: 300%;
@@ -45,12 +58,7 @@ body {
 }
 
 
-.snimka, .snimka2, .snimka3, .snimka4 {
-    width: 90%;
-    height: auto; /* Запазва пропорциите на изображенията */
-    margin: 0 auto; /* Центрира изображенията хоризонтално */
-    margin-left: 5%;
-}
+
 
 footer {
     display: flex;
