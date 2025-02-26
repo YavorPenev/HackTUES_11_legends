@@ -1,3 +1,8 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 80px;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -13,12 +18,131 @@ header {
 
 }
 
-.container {
-width: 50%;
-height: 50%;
-background-color: rgb(237, 196, 62);
-border-radius: 10px;
+/* Основно съдържание */
+main {
+    padding: 20px;
+}
 
+.section1{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+/* Секция за книгата */
+.book-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    gap: 20px;
+    width: 1170px;
+    height: 700px;
+    background-color: rgb(237, 196, 62);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Снимка на книгата */
+.book-image img {
+    margin-top: 3%;
+    margin-left: 3%;
+    align-items: center;
+    width: 350px;
+    height: 530px;
+    border-radius: 10px;
+    background-color: rgb(234, 168, 82);
+}
+
+.opisanie{
+font-size: medium;
+}
+
+.opisanie1{
+    font-size: medium;
+    margin-top: 7%;
+    }
+
+/* Детайли за книгата */
+.book-details {
+    margin-left: 6%;
+    width: 725px;
+    height: 250px;
+}
+.book-details2 {
+    margin-left: 6%;
+    width: 725px;
+    height: 250px;
+}
+
+.book-details h2 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.book-details3 {
+    margin-left: 6%;
+    width: 725px;
+    height: 250px;
+}
+
+.book-details .author {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+ .review {
+  font-size: large;
+}
+.review1{
+    margin-top: 1%;
+}
+
+.download{
+    width: 380px;
+    height: 120px;
+}
+
+.link1{
+    text-decoration: none;
+    color:#000000;
+}
+
+
+#b1:hover {
+    background-color: #ce9f28;
+}
+
+
+/* Responsive дизайн за по-малки екрани */
+@media (max-width: 768px) {
+    .book-section {
+        flex-direction: column;
+    }
+
+    .book-image {
+        text-align: center;
+    }
+
+    .book-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .book-details .author {
+        font-size: 1rem;
+    }
+
+    .book-details .review {
+        font-size: 0.9rem;
+    }
 }
 
 #input_box {
@@ -28,6 +152,16 @@ border-radius: 10px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
+#b1{
+    margin-left: 31%;
+    font-size: larger;
+    text-decoration: none;
+    background-color: rgb(237, 196, 62);
+    color: #000000;
+    border-radius: 10px;
+    padding: 2%;
+}
+
 
 #logo {
     margin-left: 4%;
