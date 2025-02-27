@@ -1,104 +1,85 @@
-// Filename - App.js
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const bodyParser = require('body-parser');
 
-const express = require("express"),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    bodyParser = require("body-parser"),
-    LocalStrategy = require("passport-local"),
-    passportLocalMongoose = 
-        require("passport-local-mongoose")
-const User = require("./model/User");
-let app = express();
+dotenv = require('dotenv');
+dotenv.config();
 
-mongoose.connect("mongodb://localhost/27017");
+const app = express();
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'css')));
+app.use(bodyParser.json());
 
-app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(require("express-session")({
-    secret: "Rusty is a dog",
-    resave: false,
-    saveUninitialized: false
-}));
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// User Schema
+const UserSchema = new mongoose.Schema({
+    username: String,
+    email: { type: String, unique: true },
+    password: String
+});
+const User = mongoose.model('User', UserSchema);
 
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
-//=====================
-// ROUTES
-//=====================
-
-// Showing home page
-app.get("/", function (req, res) {
-    res.render("home");
+// Routes for serving pages
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Showing secret page
-app.get("/secret", isLoggedIn, function (req, res) {
-    res.render("secret");
+app.get('/bookpage', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'bookpage.html'));
 });
 
-// Showing register form
-app.get("/register", function (req, res) {
-    res.render("register");
+app.get('/categ1', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'categ1.html'));
 });
 
-// Handling user signup
-app.post("/register", async (req, res) => {
-    const user = await User.create({
-      username: req.body.username,
-      password: req.body.password
-    });
-  
-    return res.status(200).json(user);
-  });
-
-//Showing login form
-app.get("/login", function (req, res) {
-    res.render("login");
+app.get('/categ2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'categ2.html'));
 });
 
-//Handling user login
-app.post("/login", async function(req, res){
+app.get('/categ3', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'categ3.html'));
+});
+
+// Signup Route
+app.post('/signup', async (req, res) => {
+    const { username, email, password } = req.body;
     try {
-        // check if the user exists
-        const user = await User.findOne({ username: req.body.username });
-        if (user) {
-          //check if password matches
-          const result = req.body.password === user.password;
-          if (result) {
-            res.render("secret");
-          } else {
-            res.status(400).json({ error: "password doesn't match" });
-          }
-        } else {
-          res.status(400).json({ error: "User doesn't exist" });
-        }
-      } catch (error) {
-        res.status(400).json({ error });
-      }
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const newUser = new User({ username, email, password: hashedPassword });
+        await newUser.save();
+        res.status(201).json({ message: 'User created successfully' });
+    } catch (err) {
+        res.status(400).json({ error: 'User already exists' });
+    }
 });
 
-//Handling user logout 
-app.get("/logout", function (req, res) {
-    req.logout(function(err) {
-        if (err) { return next(err); }
-        res.redirect('/');
-      });
+// Login Route
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) return res.status(404).json({ error: 'User not found' });
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return res.status(400).json({ error: 'Invalid credentials' });
+
+        res.json({ message: 'Login successful' });
+    } catch (err) {
+        res.status(500).json({ error: 'Server error' });
+    }
 });
 
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) return next();
-    res.redirect("/login");
-}
-
-let port = process.env.PORT || 3000;
-app.listen(port, function () {
-    console.log("Server Has Started!");
-});
 
