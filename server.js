@@ -51,30 +51,52 @@ app.get('/categ3', (req, res) => {
 
 // Signup Route
 app.post('/signup', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
+
     try {
+        // Check if the user already exists
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            return res.status(400).json({ error: 'Username already exists' });
+        }
+
+        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ username, email, password: hashedPassword });
+
+        // Create a new user
+        const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
+
+        // Respond with success message
         res.status(201).json({ message: 'User created successfully' });
     } catch (err) {
-        res.status(400).json({ error: 'User already exists' });
+        console.error('Signup Error:', err);
+        res.status(500).json({ error: 'Server error during signup' });
     }
 });
 
 // Login Route
 app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
+
     try {
-        const user = await User.findOne({ email });
-        if (!user) return res.status(404).json({ error: 'User not found' });
+        // Find the user by username
+        const user = await User.findOne({ username });
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
 
+        // Compare the provided password with the hashed password in the database
         const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({ error: 'Invalid credentials' });
+        if (!isMatch) {
+            return res.status(400).json({ error: 'Invalid credentials' });
+        }
 
+        // Respond with success message
         res.json({ message: 'Login successful' });
     } catch (err) {
-        res.status(500).json({ error: 'Server error' });
+        console.error('Login Error:', err);
+        res.status(500).json({ error: 'Server error during login' });
     }
 });
 

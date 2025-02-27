@@ -1,4 +1,4 @@
-document.getElementById('signup-btn').addEventListener('click', async () => {
+document.getElementById('login-btn').addEventListener('click', async () => {
     // Get form data
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -11,7 +11,7 @@ document.getElementById('signup-btn').addEventListener('click', async () => {
 
     // Send a POST request to the backend
     try {
-        const response = await fetch('/signup', {
+        const response = await fetch('/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,13 +23,13 @@ document.getElementById('signup-btn').addEventListener('click', async () => {
 
         // Handle the response
         if (response.ok) {
-            alert('Signup successful!');
-            window.location.href = '/login'; // Redirect to the login page
+            alert('Login successful!');
+            window.location.href = '/'; // Redirect to the home page
         } else {
-            alert(result.error || 'Signup failed');
+            alert(result.error || 'Login failed');
         }
     } catch (err) {
-        console.error('Error during signup:', err);
+        console.error('Error during login:', err);
         alert('An error occurred. Please try again.');
     }
 });

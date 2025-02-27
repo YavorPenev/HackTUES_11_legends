@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel = "stylesheet" href = "/css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class = "input-box">
+    <div class="input-box">
         <h1>Login:</h1>
-        <div class = "info">
+        <div class="info">
             <i class="fa-solid fa-user"></i>
-            <input type = "email" placeholder = "Enter your name">
+            <input type="text" id="username" placeholder="Enter your username">
         </div>
-        <div class = "info">
+        <div class="info">
             <i class="fa-solid fa-lock"></i>
-            <input type = "password" placeholder = "Enter your password">
+            <input type="password" id="password" placeholder="Enter your password">
         </div>
         <br><br><br>
-        <div class = "submit-btn">
-            <button type = "submit">Login</button>
+        <div class="submit-btn">
+            <button type="button" id="login-btn">Login</button>
         </div>
     </div>
+
+    <!-- Include the JavaScript file -->
+    <script src="/js/login.js"></script>
 </body>
 </html>
