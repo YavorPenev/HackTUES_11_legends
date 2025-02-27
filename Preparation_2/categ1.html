@@ -7,8 +7,11 @@
     <title>Bulgarian books</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="categ1.css">
+    <script src="categs.js"></script>
     <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
 </head>
+
+
 <body>
 
     <header>
@@ -38,8 +41,81 @@
 
     </header>
 
+    <div class="zaglavie-main">
+        <h1 class="bel">Българска литература</h1>
+    </div>
 
-    <h1 class="bel">Българска литература</h1>
+    <div class="bacground-car">
+        <div class="carousel-container">
+
+
+            <div class="carousel">
+
+                <button class="car_button" id="prev" onclick="nextslide(-1)">&#10094;</button>
+                <button class="car_button" id="next" onclick="nextslide(1)">&#10095;</button>
+
+
+
+                <div class="slide" id="s1">
+                    <a href="book1.html" class="car_link">
+                        <img class="car_picture" title="book1" src="photos-categ1/kniga1.jpg">
+                    </a>
+                    <div class="bookinfo">
+                        <h1>360° ПРЕДИ КРАЯ</h1>
+                        <p>„360 градуса преди края“ е книга, която разглежда пътя към самопознанието и важността на изборите, които правим в живота си. Историята изследва вътрешните конфликти и трансформации на главния герой, като акцентира върху важността на моментите, които често пренебрегваме, но които крият важни уроци. Книгата насърчава читателя да се замисли за посоката на своя живот, да се изправи пред страховете си и да поеме отговорност за своите действия. С емоционална дълбочина и философски размисли, „360 градуса преди края“ провокира към лични открития и промяна.</p>
+                    </div>
+                </div>
+
+                <div class="slide" id="s2">
+                    <a href="book1.html" class="car_link">
+                        <img class="car_picture" title="Между чука и наковалнята" src="photos-categ1/kniga2.jpg">
+                    </a>
+                    <div class="bookinfo">
+                        <h1>Между Чудовища</h1>
+                        <p>Тази книга ще ви научи на тайното изкуство на продуктивното нищоправене! Със специални
+                        техники като „Ще го направя утре“ и „Ако не го започнеш, няма как да го сбъркаш“, това
+                        четиво ще ви помогне да усъвършенствате прокрастинацията до ниво майстор. Перфектен подарък
+                        за всеки, който има дълъг списък със задачи… и никакво намерение да ги изпълни.</p>
+                    </div>
+                </div>
+
+                <div class="slide" id="s3">
+                    <a href="book1.html" class="car_link">
+                        <img class="car_picture" title="wanna learn how to cry in bulgarian?! try this book ove yonder!"
+                            src="photos-categ1/kniga3.jpg">
+                    </a>
+                    <div class="bookinfo">
+                        <h1>Некъв учебник по бългаски</h1>
+                        <p>Обичате ли да готвите, но никога не стигате до снимки в Instagram? Това е книгата за вас! От
+                        „Спагети с отчаяние“ до „Сандвич с хляб и малко тъга“, тези рецепти са бързи, евтини и не
+                        изискват свидетели. Гарантирано ще ви стане по-вкусно (или поне по-забавно), докато ядете
+                        пред телевизора в 2 през нощта.</p>
+                    </div>
+                </div>
+
+                <div class="slide" id="s3">
+                    <a href="book1.html" class="car_link">
+                        <img class="car_picture" title="wanna learn how to cry in bulgarian?! try this book ove yonder!"
+                            src="photos-categ1/kniga3.jpg">
+                    </a>
+                    <div class="bookinfo">
+                        <h1>Некъв учебник по бългаски</h1>
+                        <p>Обичате ли да готвите, но никога не стигате до снимки в Instagram? Това е книгата за вас! От
+                        „Спагети с отчаяние“ до „Сандвич с хляб и малко тъга“, тези рецепти са бързи, евтини и не
+                        изискват свидетели. Гарантирано ще ви стане по-вкусно (или поне по-забавно), докато ядете
+                        пред телевизора в 2 през нощта.</p>
+                    </div>
+                </div>
+
+                <div class="box-navbutt">
+                    <button class="navbutt" onclick="ButtSlide(0)">&nbsp</button>
+                    <button class="navbutt" onclick="ButtSlide(1)">&nbsp</button>
+                    <button class="navbutt" onclick="ButtSlide(2)">&nbsp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <section class="category">
         <div class="conteiner">
