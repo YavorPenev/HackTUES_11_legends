@@ -165,7 +165,7 @@ async function checkAuth() {
         if (data.loggedIn) {
             profileButton.style.display = "inline-block";
             logoutButton.style.display = "inline-block";
-            loginButton.style.display = "none";
+            info2.style.display = "none";
         } else {
             profileButton.style.display = "none";
             logoutButton.style.display = "none";
@@ -175,4 +175,21 @@ async function checkAuth() {
         console.error('Error checking authentication:', err);
     }
 }
+
+app.get('/user-info', async (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({ error: "Not logged in" });
+    }
+
+    try {
+        const user = await User.findOne({ username: req.session.user.username }).select('-password'); // Exclude password
+        if (!user) return res.status(404).json({ error: "User not found" });
+
+        res.json({ username: user.username });
+    } catch (err) {
+        console.error("User Info Fetch Error:", err);
+        res.status(500).json({ error: "Server error fetching user info" });
+    }
+});
+
 
