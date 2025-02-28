@@ -109,25 +109,28 @@ document.addEventListener("DOMContentLoaded", function () {
     ShowSlide2();
 });
 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                      SIDEBAR MENU (СТРАНИЧНО МЕНЮ)                                               //
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
-    const profileBtn = document.getElementById("profileBtn");
+    const profileButton = document.getElementById("profileButton");
     const sidebar = document.getElementById("sidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+    document.body.appendChild(overlay);
 
-    // Отваряне на страничното меню
-    profileBtn.addEventListener("click", function (event) {
-        event.preventDefault(); // Спира линка от презареждане
-        sidebar.classList.toggle("active"); // Променено на toggle за скриване/показване
+    profileButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Предотвратява навигирането към profile.html
+        sidebar.style.right = "0";
+        overlay.style.display = "block";
     });
 
-    // Затваряне на страничното меню при клик върху бутона за затваряне
-    closeSidebar.addEventListener("click", function () {
-        sidebar.classList.remove("active");
+    overlay.addEventListener("click", function () {
+        sidebar.style.right = "-250px";
+        overlay.style.display = "none";
+    });
+
+    const logoutButton = document.getElementById("logoutButton");
+    logoutButton.addEventListener("click", function () {
+        alert("Logged out successfully!");
+        // Тук можете да добавите логика за изход от профила
     });
 });

@@ -6,6 +6,7 @@
     <title>English books</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/categ1.css">
+    <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,11 +32,21 @@
             </div>
         </div>
 
-        <a href="profile.html">
-            <button class="profile"><i class="fa-solid fa-user"></i></button>
-        </a>
+        <button class="profile" id="profileButton"><i class="fa-solid fa-user"></i></button>
 
     </header>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3 id="userName">👤User Name</h3> 
+            <br>
+            <p id="userEmail"><b>📅Registration date:</b>&nbsp;<p style="color: white;"><b>28.02.2025</b></p></p> 
+            <br>
+            <p id="userDescription"><b>🏞️A short description:</b>.</p>
+            <p>Димчо Димов е успешен бизнесмен и предприемач с опит в технологиите и иновациите. В свободното си време обича приключенски спортове и фотография</p>
+        </div>
+        <button id="logoutButton" class="logout-button"><b>Log&nbsp;out</b></button> 
+    </div>
 
 
     <h1 class="bel">Английска литература</h1>
