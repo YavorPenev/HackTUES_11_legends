@@ -24,8 +24,6 @@ header {
      justify-content: space-between;
 }
 
-
-
 .section3{
     border: none;
     border-radius: 10px;
@@ -39,11 +37,21 @@ header {
 }
 
 #input_box {
-    padding: 5px;
+    padding: 0.41%;
     font-size: 16px;
     border: none;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    height: 30%;
+}
+
+#search_icon {
+    padding: 0.41%;
+    margin-left: 0;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 30%;
 }
 
 #LOGINBUTTON3
@@ -115,15 +123,6 @@ header {
     font-size: 120%;
     background-color: rgb(237, 196, 62);
     border: none;
-}
-
-#search_icon {
-    padding: 0.41%;
-    margin-left: 0;
-    border-width: 0.1%;
-    background-color: rgb(255, 255, 255);
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
 }
 
 .dropdown:hover .dropdown-content {
