@@ -303,11 +303,10 @@ header {
 .slide-2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center; 
     flex-wrap: nowrap;
     margin-bottom: 20px;
-    gap: 7%;
     position: absolute;
     transition: transform 0.5s ease-in-out;
     height: fit-content;
@@ -355,11 +354,13 @@ header {
     text-align: center;
     text-decoration: none;
     color: black;
+    width: 13%;
 }
 
 .spammable-book img
 {
     aspect-ratio: 311/480;
+    width: 100%;
 }
 
 #prev-2, #next-2 {
