@@ -16,7 +16,7 @@ document.getElementById('login-btn').addEventListener('click', async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password }), // Only send username and password
         });
 
         const result = await response.json();
@@ -24,7 +24,7 @@ document.getElementById('login-btn').addEventListener('click', async () => {
         // Handle the response
         if (response.ok) {
             alert('Login successful!');
-            window.location.href = '/'; // Redirect to the home page
+            window.location.href = '/'; // Redirect to home page
         } else {
             alert(result.error || 'Login failed');
         }

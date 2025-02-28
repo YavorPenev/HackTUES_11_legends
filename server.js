@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
-dotenv.config();
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public' folder
 
-// Connect to MongoDB
+// Connect to MongoDB using the URI from .env
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
