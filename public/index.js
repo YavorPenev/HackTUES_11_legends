@@ -57,8 +57,6 @@ setInterval(() => {
 ////////////////////////////*↑ END OF FIRST CAROUSEL ↑;; ↓START OF SECOND CAROUSEL↓*///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 let slideindex2 = 0;
 
 function nextslide2(step2) {
@@ -118,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     profileButton.addEventListener("click", function (event) {
-        event.preventDefault(); // Предотвратява навигирането към profile.html
+        event.preventDefault(); // Prevents navigation to profile.html
         sidebar.style.right = "0";
         overlay.style.display = "block";
     });
@@ -128,9 +126,53 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.style.display = "none";
     });
 
+    // Logout functionality
     const logoutButton = document.getElementById("logoutButton");
-    logoutButton.addEventListener("click", function () {
-        alert("Logged out successfully!");
-        // Тук можете да добавите логика за изход от профила
+    logoutButton.addEventListener("click", async function () {
+        try {
+            const response = await fetch('/logout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert(result.message);
+                window.location.reload(); // Reload page after logout
+            } else {
+                alert('Logout failed. Please try again.');
+            }
+        } catch (err) {
+            console.error('Logout error:', err);
+            alert('An error occurred while logging out.');
+        }
     });
+
+    // Check authentication status on page load
+    checkAuth();
 });
+
+async function checkAuth() {
+    try {
+        const response = await fetch('/check-auth');
+        const data = await response.json();
+
+        const profileButton = document.getElementById("profileButton");
+        const logoutButton = document.getElementById("logoutButton");
+        const loginButton = document.getElementById("loginButton");
+
+        if (data.loggedIn) {
+            profileButton.style.display = "inline-block";
+            logoutButton.style.display = "inline-block";
+            loginButton.style.display = "none";
+        } else {
+            profileButton.style.display = "none";
+            logoutButton.style.display = "none";
+            loginButton.style.display = "inline-block";
+        }
+    } catch (err) {
+        console.error('Error checking authentication:', err);
+    }
+}
+
