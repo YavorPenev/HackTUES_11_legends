@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public' folder
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -23,51 +23,30 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log('MongoDB Connection Error:', err));
 
-// User Schema
+// User Schema (WITHOUT EMAIL)
 const UserSchema = new mongoose.Schema({
-    username: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
 });
 
 const User = mongoose.model('User', UserSchema);
 
 // Routes for serving HTML pages
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('/bookpage', (req, res) => res.sendFile(path.join(__dirname, 'public', 'bookpage.html')));
+app.get('/categ1', (req, res) => res.sendFile(path.join(__dirname, 'public', 'categ1.html')));
+app.get('/categ2', (req, res) => res.sendFile(path.join(__dirname, 'public', 'categ2.html')));
+app.get('/categ3', (req, res) => res.sendFile(path.join(__dirname, 'public', 'categ3.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'public', 'login.html')));
+app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, 'public', 'signup.html')));
 
-app.get('/bookpage', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'bookpage.html'));
-});
-
-app.get('/categ1', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'categ1.html'));
-});
-
-app.get('/categ2', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'categ2.html'));
-});
-
-app.get('/categ3', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'categ3.html'));
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
-});
-
-// Signup Route
+// Signup Route (UPDATED: Removed email)
 app.post('/signup', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
 
     try {
         // Check if the user already exists
-        const existingUser = await User.findOne({ email });
+        const existingUser = await User.findOne({ username });
         if (existingUser) {
             return res.status(400).json({ error: 'User already exists' });
         }
@@ -75,8 +54,8 @@ app.post('/signup', async (req, res) => {
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create a new user
-        const newUser = new User({ username, email, password: hashedPassword });
+        // Create a new user (WITHOUT EMAIL)
+        const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
 
         // Respond with success message
@@ -87,7 +66,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-// Login Route
+// Login Route (UNCHANGED)
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
@@ -117,5 +96,6 @@ const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 
