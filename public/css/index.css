@@ -566,6 +566,7 @@ footer {
     border: solid;
     border-color: #000000;
     color: white;
+    margin-left: 3%;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
