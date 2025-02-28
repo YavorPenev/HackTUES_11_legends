@@ -541,6 +541,7 @@ footer {
     cursor: pointer;
     font-size: 16px;
     text-align: center;
+    margin-left: 3%;
     transition: background-color 0.3s;
 }
 
