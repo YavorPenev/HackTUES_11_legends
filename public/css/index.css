@@ -58,12 +58,16 @@ header {
     margin-left: 4%;
     background-color: rgb(237, 196, 62);
     color:#000000;
-    margin-right: 3%;
+    font-size: larger;
+    margin-left: 1%;
+    margin-right: 15%;
     border: none;
 }
 
 #signupButton1{
     background-color: rgb(237, 196, 62);
+    font-size: larger;
+    margin-left: 5%;
     color:#000000;
     border: none;
 }
@@ -112,7 +116,6 @@ header {
     margin-left: 0;
     border-width: 0.1%;
     background-color: rgb(255, 255, 255);
-    margin-right: 4%;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
 }
