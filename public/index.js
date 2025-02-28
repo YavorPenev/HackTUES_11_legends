@@ -166,7 +166,7 @@ async function checkAuth() {
         if (data.loggedIn) {
             profileButton.style.display = "inline-block";
             logoutButton.style.display = "inline-block";
-            loginButton.style.display = "none";
+            info2.style.display = "none";
 
             // Display the username
             usernameDisplay.innerText = `Welcome to ReadHub, ${data.username}`;  // Display the logged-in user's username
