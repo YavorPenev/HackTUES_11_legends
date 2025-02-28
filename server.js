@@ -5,6 +5,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const session = require('express-session');
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -14,6 +15,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public' folder
+app.use(session({
+    secret: 'your-secret-key', // Change this to a strong secret key
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Set to `true` if using HTTPS
+}));
 
 // Connect to MongoDB using the URI from .env
 mongoose.connect(process.env.MONGO_URI, {
@@ -40,7 +47,7 @@ app.get('/categ3', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ca
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'public', 'login.html')));
 app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, 'public', 'signup.html')));
 
-// Signup Route (UPDATED: Removed email)
+// Signup Route
 app.post('/signup', async (req, res) => {
     const { username, password } = req.body;
 
@@ -54,11 +61,10 @@ app.post('/signup', async (req, res) => {
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create a new user (WITHOUT EMAIL)
+        // Create a new user
         const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
 
-        // Respond with success message
         res.status(201).json({ message: 'User created successfully' });
     } catch (err) {
         console.error('Signup Error:', err);
@@ -66,7 +72,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
-// Login Route (UNCHANGED)
+// Login Route
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
@@ -83,11 +89,32 @@ app.post('/login', async (req, res) => {
             return res.status(400).json({ error: 'Invalid credentials' });
         }
 
-        // Respond with success message
-        res.json({ message: 'Login successful' });
+        // Store user info in session
+        req.session.user = { username };
+
+        res.json({ message: 'Login successful', username });
     } catch (err) {
         console.error('Login Error:', err);
         res.status(500).json({ error: 'Server error during login' });
+    }
+});
+
+// Logout Route
+app.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ error: 'Logout failed' });
+        }
+        res.json({ message: 'Logged out successfully' });
+    });
+});
+
+// Check if User is Logged In
+app.get('/check-auth', (req, res) => {
+    if (req.session.user) {
+        res.json({ loggedIn: true, username: req.session.user.username });
+    } else {
+        res.json({ loggedIn: false });
     }
 });
 
@@ -96,6 +123,7 @@ const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 
 
