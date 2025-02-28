@@ -160,12 +160,14 @@ async function checkAuth() {
 
         const profileButton = document.getElementById("profileButton");
         const logoutButton = document.getElementById("logoutButton");
-        const loginButton = document.getElementById("loginButton");
+        const loginButton1 = document.getElementById("loginButton");
         const usernameDisplay = document.getElementById("usernameDisplay");  // New element to display username
 
         if (data.loggedIn) {
             profileButton.style.display = "inline-block";
             logoutButton.style.display = "inline-block";
+            signupButton1.style.display = "none";
+            loginButton1.style.display = "none"
             info2.style.display = "none";
 
             // Display the username
@@ -173,8 +175,6 @@ async function checkAuth() {
         } else {
             profileButton.style.display = "none";
             logoutButton.style.display = "none";
-            loginButton.style.display = "inline-block";
-
             // Clear the username display if not logged in
             usernameDisplay.innerText = '';
         }
