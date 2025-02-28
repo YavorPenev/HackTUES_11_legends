@@ -54,6 +54,21 @@ header {
     margin-right: 45%;
 }
 
+#loginButton1{
+    margin-left: 4%;
+    background-color: rgb(237, 196, 62);
+    color:#000000;
+    margin-right: 3%;
+    border: none;
+}
+
+#signupButton1{
+    background-color: rgb(237, 196, 62);
+    color:#000000;
+    border: none;
+}
+
+
 .dropdown {
     margin-right: 2%;
     position: relative;
