@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Отваряне на страничното меню
     profileBtn.addEventListener("click", function (event) {
         event.preventDefault(); // Спира линка от презареждане
-        sidebar.classList.add("active");
+        sidebar.classList.toggle("active"); // Променено на toggle за скриване/показване
     });
 
-    // Затваряне на страничното меню
+    // Затваряне на страничното меню при клик върху бутона за затваряне
     closeSidebar.addEventListener("click", function () {
         sidebar.classList.remove("active");
     });

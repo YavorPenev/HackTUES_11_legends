@@ -110,9 +110,9 @@ header {
 .profile {
     background-color: rgb(237, 196, 62);
     border: solid;
-    padding: 45%;
-    padding-left: 60%;
-    padding-right: 60%;
+    padding: 1.5%;
+    padding-left:1.5%;
+    padding-right: 1.5%;
     border-radius: 100%;
     cursor: pointer;
 }
@@ -513,4 +513,57 @@ footer {
     cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+.profile-menu {
+    position: fixed;
+    top: 60px; /* Да не покрива хедъра */
+    right: -300px; /* Скрито първоначално */
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.profile-menu.show {
+    right: 0;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px; /* Да не покрива хедъра */
+    right: -300px; /* Скрито първоначално */
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+#closeSidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
