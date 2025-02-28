@@ -160,7 +160,7 @@ async function checkAuth() {
 
         const profileButton = document.getElementById("profileButton");
         const logoutButton = document.getElementById("logoutButton");
-        const loginButton1 = document.getElementById("loginButton");
+        const loginButton = document.getElementById("loginButton");
         const usernameDisplay = document.getElementById("usernameDisplay");  // New element to display username
 
         if (data.loggedIn) {
