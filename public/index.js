@@ -169,7 +169,7 @@ async function checkAuth() {
             loginButton.style.display = "none";
 
             // Display the username
-            usernameDisplay.innerText = `Welcome, ${data.username}`;  // Display the logged-in user's username
+            usernameDisplay.innerText = `Welcome to ReadHub, ${data.username}`;  // Display the logged-in user's username
         } else {
             profileButton.style.display = "none";
             logoutButton.style.display = "none";
