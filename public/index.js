@@ -111,3 +111,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                      SIDEBAR MENU (СТРАНИЧНО МЕНЮ)                                               //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+    const profileBtn = document.getElementById("profileBtn");
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    // Отваряне на страничното меню
+    profileBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Спира линка от презареждане
+        sidebar.classList.add("active");
+    });
+
+    // Затваряне на страничното меню
+    closeSidebar.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+    });
+});
