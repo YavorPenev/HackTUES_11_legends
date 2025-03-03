@@ -37,7 +37,7 @@ header {
 
 #input_box {
     padding: 0.41%;
-    font-size: 16px;
+    font-size: 1em;
     border: none;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -45,6 +45,7 @@ header {
 }
 
 #search_icon {
+    font-size: 100%;
     padding: 0.41%;
     margin-left: 0;
     background-color: rgb(255, 255, 255);
