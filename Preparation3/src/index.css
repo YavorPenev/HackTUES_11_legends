@@ -4,33 +4,20 @@ body{
     color: white;
 }
 
-.blueBackground{
-    background-Color: rgb(31, 2, 84);
-    color: white;
-}
-  
-.whiteBackground{
-    background-Color: white;
-    color: black;
-}
-  
-.blackBackground{
-    background-Color: black;
-    color: white;
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(89, 164, 255);
+    align-items: center;
+    margin-top: -1%;
+    margin-left: -1%;
+    margin-right: -1%;
 }
 
-.blueButton{
-    background-Color: rgb(31, 2, 84);
-    color: white;
-}
-
-.blueButton:hover{
-    background-color: rgb(109, 54, 211);
-}
-  
-.whiteButton{
-    background-Color: white;
-    color: black;
+#site_name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #mainheader
