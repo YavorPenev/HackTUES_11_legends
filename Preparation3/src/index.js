@@ -92,11 +92,9 @@ function ThemeChange() {
   };
 
   return (
-    <div id="second-box">
-      <h1 id="forehead">Click this button to change theme:</h1>
-      <button id="fifth-button" onClick={CycleTheme}>
-      🌙/🌞
-      </button>
+    <div id='second-box'>
+      <h1 id='forehead'>Click this button to change theme:</h1>
+      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>CLICK ME!</button>
     </div>
   );
 }
@@ -107,11 +105,11 @@ function CreateText() {
   return (
     <>
       <h2 id="forehead">This is {text}</h2>
-      <div className="buttflex">
-        <button onClick={() => changeText("Header №1")}>Click me for different header!</button>
-        <button onClick={() => changeText("Header №2")}>Click me for different header!</button>
-        <button onClick={() => changeText("Header №3")}>Click me for different header!</button>
-        <button onClick={() => changeText("Header №4")}>Click me for different header!</button>
+      <div className='buttflex'>
+        <button class="main_buttons" onClick={() => changeText("Header №1")}>Click me for different header!</button>
+        <button class="main_buttons" onClick={() => changeText("Header №2")}>Click me for different header!</button>
+        <button class="main_buttons" onClick={() => changeText("Header №3")}>Click me for different header!</button>
+        <button class="main_buttons" onClick={() => changeText("Header №4")}>Click me for different header!</button>
       </div>
     </>
   );

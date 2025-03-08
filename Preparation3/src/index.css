@@ -9,11 +9,34 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(89, 164, 255);
     align-items: center;
     margin-top: -1%;
     margin-left: -1%;
     margin-right: -1%;
+}
+
+#navbar_left{
+    margin-left: 1%;
+    padding: 0.5%;
+    border: solid;
+    padding-left: 0.7%;
+    padding-right: 0.7%;
+    border-radius: 3px;
+    margin-right: 1%;
+    font-size: larger;
+}
+
+#nav_left_butto{
+    text-decoration: none;
+    background-color:none;
+}
+
+#logo{
+
+}
+
+#name{
+    color:rgb(89, 164, 255);
 }
 
 #site_name {
@@ -46,8 +69,7 @@ header {
     justify-content: space-around;
 }
 
-
-button {
+.main_buttons{
     border: none;
     height: fit-content;
     width: max-content;
