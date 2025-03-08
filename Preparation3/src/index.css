@@ -5,7 +5,6 @@ body {
     color: white;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
@@ -13,36 +12,41 @@ header {
     margin-top: -1%;
     margin-left: -1%;
     margin-right: -1%;
+    width: 100%;
 }
 
 #navbar_left{
-    margin-left: 1%;
-    padding: 0.5%;
-    border: solid;
-    padding-left: 0.7%;
-    padding-right: 0.7%;
-    border-radius: 3px;
-    margin-right: 1%;
-    font-size: larger;
+    font-size: 0.1%;
 }
 
 #nav_left_butto{
-    text-decoration: none;
-    background-color:none;
+    font-size: 100%;
+}
+#nav_left_butto:hover{
+    background-color: rgb(159, 172, 184);
+    
 }
 
-#logo{
 
-}
-
-#name{
-    color:rgb(89, 164, 255);
-}
 
 #site_name {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 1%;
+    margin-right: 71%;
+}
+
+#sub_button{
+    margin-right: 2%;
+}
+
+#navbar_right{
+    font-size: 240%;
+    
+}
+#nav_right_button{
+    font-size: 100%;
 }
 
 #mainheader {
