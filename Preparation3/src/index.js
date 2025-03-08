@@ -1,40 +1,34 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
 function ThemeChange() {
-  const themes = ["rgb(31, 2, 84)", "black", "white"];
   const [i, changei] = useState(0);
 
-  const bluebutton = {
-    
-  }
+  const themes = ["whiteButton", "whiteButton", "blueButton"];
+  const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
 
   const CycleTheme = () => {
     const nextIndex = (i + 1) % themes.length;
     changei(nextIndex);
-    document.body.style.backgroundColor = themes[nextIndex];
 
-    if (nextIndex === 1) {
-      document.body.style.color = "white";
-    } else {
-      document.body.style.color = "black";
-    }
+    const buttons = document.querySelectorAll("button");
 
-    const button = document.querySelector("button");
-    if (nextIndex === 2) {
-      button.style.backgroundColor = "rgb(31, 2, 84)";
-      button.style.color = "white";
-    } else {
-      button.style.backgroundColor = "white";
-      button.style.color = "black";
-    }
+    document.body.classList.remove(...backgroundThemes);
+    buttons.forEach((button) => {
+      button.classList.remove("whiteButton", "blueButton");
+    });
+
+    document.body.classList.add(backgroundThemes[nextIndex]);
+    buttons.forEach((button) => {
+      button.classList.add(themes[nextIndex]);
+    });
   };
 
   return (
     <div id='second-box'>
       <h1 id='forehead'>Click this button to change theme:</h1>
-      <button onClick={CycleTheme}>CLICK ME!</button>
+      <button id='fifth-button' onClick={CycleTheme}>CLICK ME!</button>
     </div>
   );
 }
@@ -42,7 +36,7 @@ function ThemeChange() {
 function CreateText() {
   const [text, changeText] = useState("Header №1");
 
-  return(
+  return (
     <>
       <h2 id="forehead">This is {text}</h2>
       <div className='buttflex'>
@@ -53,13 +47,12 @@ function CreateText() {
       </div>
     </>
   );
-
 }
 
 function App() {
   return (
     <div className="App">
-      <h1 id="mainheader">Edit App.js and save to reload! So simple!</h1>
+      <h1 id="mainheader">React.js is a bitch!</h1>
       <CreateText/>
       <ThemeChange/>
     </div>
