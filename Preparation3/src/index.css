@@ -4,6 +4,35 @@ body{
     color: white;
 }
 
+.blueBackground{
+    background-Color: rgb(31, 2, 84);
+    color: white;
+}
+  
+.whiteBackground{
+    background-Color: white;
+    color: black;
+}
+  
+.blackBackground{
+    background-Color: black;
+    color: white;
+}
+
+.blueButton{
+    background-Color: rgb(31, 2, 84);
+    color: white;
+}
+
+.blueButton:hover{
+    background-color: rgb(109, 54, 211);
+}
+  
+.whiteButton{
+    background-Color: white;
+    color: black;
+}
+
 #mainheader
 {
     font-size: 400%;
@@ -38,6 +67,8 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-top: 3%;
 }
 
 
