@@ -92,7 +92,9 @@ button:hover {
 }
 
 .carousel {
-    margin: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
     padding: 4%;
     background-color: rgb(237, 196, 62);
     border-radius: 10px;
