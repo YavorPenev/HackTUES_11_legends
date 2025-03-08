@@ -14,6 +14,35 @@ header{
     margin-right: -1%;
 }
 
+.blueBackground{
+    background-Color: rgb(31, 2, 84);
+    color: white;
+}
+  
+.whiteBackground{
+    background-Color: white;
+    color: black;
+}
+  
+.blackBackground{
+    background-Color: black;
+    color: white;
+}
+
+.blueButton{
+    background-Color: rgb(31, 2, 84);
+    color: white;
+}
+
+.blueButton:hover{
+    background-color: rgb(109, 54, 211);
+}
+  
+.whiteButton{
+    background-Color: white;
+    color: black;
+}
+
 #site_name{
     display: flex;
     flex-direction: row;
