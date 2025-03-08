@@ -94,7 +94,7 @@ function ThemeChange() {
   return (
     <div id='second-box'>
       <h1 id='forehead'>Click this button to change theme:</h1>
-      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>CLICK ME!</button>
+      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>🌙/🌞</button>
     </div>
   );
 }
