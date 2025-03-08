@@ -1,6 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
+
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
+
 
 function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -9,7 +14,7 @@ function Carousel() {
     setSlideIndex((prevIndex) => {
       const newIndex = prevIndex + step;
       if (newIndex >= 4) return 0;
-      if (newIndex < 0) return 4;
+      if (newIndex < 0) return 3;
       return newIndex;
     });
   };
@@ -27,7 +32,7 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="carousel">
+    <div className="main_buttons" id="carousel">
       <div className="slide" style={{ transform: slideIndex === 0 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 1</h2>
       </div>
@@ -93,8 +98,9 @@ function ThemeChange() {
 
   return (
     <div id='second-box'>
-      <h1 id='forehead'>Click this button to change theme:</h1>
-      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>🌙/🌞</button>
+      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>
+        <FontAwesomeIcon icon={faCircleHalfStroke} />
+      </button>
     </div>
   );
 }
@@ -118,9 +124,9 @@ function CreateText() {
 function App() {
   return (
     <div className="App">
-      <h1 id="mainheader">React.js is a bitch!</h1>
-      <CreateText />
       <ThemeChange />
+      <h1 id="mainheader">Factify</h1>
+      <CreateText />      
       <Carousel />
     </div>
   );
