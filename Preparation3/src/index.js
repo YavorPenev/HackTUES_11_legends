@@ -74,62 +74,52 @@ function ThemeChange() {
   const [i2, changei2] = useState(0);
   const [indexElement, changeElement] = useState(0);
 
+  const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
   const themes = ["whiteButton", "whiteButton", "blueButton"];
   const themes2 = ["blueButton", "blackButton", "whiteButton"];
   const elementThemes = ["whiteElement", "whiteElement", "blueElement"];
-  const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
 
-  const CycleTheme = () => {
 
-    const nextIndex = (i + 1) % themes.length;
-    const nextIndex2 = (i2 + 1) % themes2.length;
-    const nextElement = (indexElement + 1) % elementThemes.length;
-    changei(nextIndex);
-    changei2(nextIndex2);
-    changeElement(nextElement);
+  const applyTheme = (index) => {
+    document.body.classList.remove(...backgroundThemes);
+    document.body.classList.add(backgroundThemes[index]);
 
     const buttons = document.getElementsByClassName("main_buttons");
     const carButt = document.getElementsByClassName("car_buttons");
     const elements = document.getElementsByClassName("element-background");
 
-    for(let button of buttons)
-    {
-      button.classList.remove("whiteButton", "blueButton");
-    }
-
-    for(let button of carButt)
-    {
+    for (let button of buttons) {
       button.classList.remove("whiteButton", "blueButton", "blackButton");
-    }  
-
-    for(let element of elements)
-    {
-      element.classList.remove("whiteElement", "blueElement");
+      button.classList.add(themes[index]);
     }
 
-    document.body.classList.remove(...backgroundThemes);      
-
-    document.body.classList.add(backgroundThemes[nextIndex]);
-
-    for(let button of buttons)
-    {
-      button.classList.add(themes[nextIndex]);
+    for (let button of carButt) {
+      button.classList.remove("whiteButton", "blueButton", "blackButton");
+      button.classList.add(themes2[index]);
     }
 
-    for(let button of carButt)
-    {
-      button.classList.add(themes2[nextIndex2]);
+    for (let element of elements) {
+      element.classList.remove("whiteElement", "blueElement", "blackElement");
+      element.classList.add(elementThemes[index]);
     }
+  };
 
-    for(let element of elements)
-    {
-      element.classList.add(elementThemes[nextElement]);
-    }
+  useEffect(() => {
+    applyTheme(0);
+  }, []);
+
+  const CycleTheme = () => {
+    const nextIndex = (i + 1) % themes.length;
+    changei(nextIndex);
+    changei2((i2 + 1) % themes2.length);
+    changeElement((indexElement + 1) % elementThemes.length);
+
+    applyTheme(nextIndex);
   };
 
   return (
     <div id='second-box'>
-      <button  className="main_buttons" id='fifth-button' onClick={CycleTheme}>
+      <button className="main_buttons" id='fifth-button' onClick={CycleTheme}>
         <FontAwesomeIcon icon={faCircleHalfStroke} />
       </button>
     </div>
