@@ -195,8 +195,8 @@ header {
 .slide {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-evenly;
+    width: 64%;
     height:max-content;
     font-size: 1rem;
     font-weight: bold;
@@ -205,8 +205,8 @@ header {
     position: absolute;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
     padding-bottom: 10%;
     padding-top: 3%;
 }
