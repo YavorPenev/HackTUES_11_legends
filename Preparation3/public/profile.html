@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel = "stylesheet" href = "profile.css">
+    <link rel = "stylesheet" href = "../src/profile.css">
+    <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class = "buttons" id = "buttons">
-    <button type = "button">Logout</button>
-    <button type = "button">Create an article</button>
-    <button type = "button">Style</button>
-    <button type = "button">FAQ</button>
-</div>
-<div class = "profile" id = "profile">
-    <div class = "profile_picture" id = "profile_picture">
-        
+<div class  = "container" id = "container">
+    <div class = "buttons" id = "buttons">
+        <button type = "button">Logout</button>
+        <button type = "button">Create an article</button>
+        <button type = "button">Style</button>
+        <button type = "button">FAQ</button>
     </div>
-</div>    
+    <div class = "pcontainer" id = "pcontainer">
+    <div class = "profile" id = "profile">
+        My Profile:
+        <div class = "profile_picture" id = "profile_picture">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class = "username" id = "username">
+            Dimcho Dimov
+        </div> 
+        </div>   
+        <div class = "description" id = "description">
+            <p>Entrepeneur</p>
+        </div>
+        </div>
+</div>
 </body>
 </html>
