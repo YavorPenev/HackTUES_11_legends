@@ -56,7 +56,8 @@ header {
     align-content: center;
 }
 
-#nav_right_button {
+#nav_right_button
+{
     padding: 5px, 5px, 5ox, 5px;
 }
 
@@ -178,26 +179,24 @@ header {
 }
 
 #carousel {
-    width: max-content;
     margin-top: 5%;
-    padding: 4%;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    padding-left: 5%;
-    padding-right: 5%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/10;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    max-width: 1200px;    
 }
 
 .slide {
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height:max-content;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
@@ -205,46 +204,33 @@ header {
     position: absolute;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 10%;
+    padding-top: 3%;
 }
 
 .slide.active {
     opacity: 1;
     transform: translateX(0);
 }
-
-.car_link {
-    width: 25%;
-    height: auto;
+  
+.slide.inactive {
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
-.car_picture {
-    max-width: 100%;
-    width: 100%;
-    object-fit: contain;
-    border-radius: 5px;
-}
-
-.bookinfo {
-    flex-grow: 1;
+.infoContainer{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40%;
-    box-sizing: border-box;
-    overflow: hidden;
-    height: 100%;
-    margin-right: 30%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8%;
 }
 
-.bookinfo h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-.bookinfo p {
-    font-size: 1.5em;
-    white-space: normal;
-    overflow: hidden;
+.carHeader
+{
+    margin: 0px;
 }
 
 #prev,
