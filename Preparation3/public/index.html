@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" src="logo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>React App</title>
     <link rel="stylesheet" href="../src/index.css">
     <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
       <div id="navbar_left">
-        
+        <button class="main_buttons" id="nav_left_button"><i class="fa-solid fa-bars"></i></button>
       </div>
 
       <div id="site_name">
-
+        <img id="logo" alt="brokenicon" src="TheLogo.png" width="35px" height="34px">
+        <h2 id="name" class="">Factify</h2>
       </div>
 
-      <div id="sub_button">
+        <div id="sub_button">
+          <h2>SUBSCRIBE </h2>
+        </div>
 
-      </div>
-
-      <siv id="navbar_right">
-        
-      </siv>
+        <siv id="navbar_right" class="main_buttons">
+          <button id="nav_right_button"><i class="fa-solid fa-gear"></i></button>
+        </siv>
     </header>
 
     <div id="root"></div>
-  </body>
+
+</body>
 
 </html>
