@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+}
+.flextitle{
+    font-size: x-large;
+}
+.flexbox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.flexg{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    margin: 3%;
+    border-radius: 15px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.img{
+    display: flex;
+    justify-content: start;
+    width: 40%;
+    height: auto;
+    margin-left: 3%;
+}
+.flexm{
+    display: flex;
+    justify-content: start;
+    font-size: x-large;
+}
+.flexmt{
+    font-size: xx-large;
+}
