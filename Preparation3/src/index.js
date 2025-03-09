@@ -36,6 +36,7 @@ function Carousel() {
       </div>
       <div className="slide" style={{ transform: slideIndex === 1 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 2</h2>
+        <div></div>
       </div>
       <div className="slide" style={{ transform: slideIndex === 2 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 3</h2>
