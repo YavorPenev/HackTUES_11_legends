@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
-
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -24,27 +23,62 @@ function Carousel() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide(1);
-    }, 10000);
+    }, 9999999999);
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
     <div className="element-background" id="carousel">
-      <div className="slide" style={{ transform: slideIndex === 0 ? 'translateX(0)' : 'translateX(100%)' }}>
-        <h2>Slide 1</h2>
-      </div>
-      <div className="slide" style={{ transform: slideIndex === 1 ? 'translateX(0)' : 'translateX(100%)' }}>
-        <h2>Slide 2</h2>
-        <div></div>
-      </div>
-      <div className="slide" style={{ transform: slideIndex === 2 ? 'translateX(0)' : 'translateX(100%)' }}>
-        <h2>Slide 3</h2>
-      </div>
-      <div className="slide" style={{ transform: slideIndex === 3 ? 'translateX(0)' : 'translateX(100%)' }}>
-        <h2>Slide 4</h2>
+      {/* Slide 1 */}
+      <div className={`slide ${slideIndex === 0 ? 'active' : 'inactive'}`}>
+        <h2 className="carHeader">Slide 1</h2>
+        <div className="infoContainer">
+          <img src="article1.png" alt="Article 1" />
+          <p>Content for slide 1..Content for slide 1...Content for slide 1...Content fo
+            r slide 1...Content for slide 1...Content for slide 1...Content for slide 1.
+            ..Content for slide 1...Content for slide 1...Content for slide 1...Content 
+            for slide 1...Content for slide 1...Content for slide 1...Content for slide 
+            1...Content for slide de 1....</p>
+        </div>
       </div>
 
+      {/* Slide 2 */}
+      <div className={`slide ${slideIndex === 1 ? 'active' : 'inactive'}`}>
+        <h2 className="carHeader">Slide 2</h2>
+        <div className="infoContainer">
+          <img src="article2.png" alt="Article 2" />
+          <p>Content for slide 2...Content for slide 2...Content for slide 2...Content for 
+            slide 2...Content for slide 2...Content for slide 2...Content for slide 2...Co
+            ntent for slide 2...Content for slide 2...Conte
+            ide 2...Content for slide 2...Content for slide 2...Content for slide 2...Content for slide 2...</p>
+        </div>
+      </div>
+
+      {/* Slide 3 */}
+      <div className={`slide ${slideIndex === 2 ? 'active' : 'inactive'}`}>
+        <h2 className="carHeader">Slide 3</h2>
+        <div className="infoContainer">
+          <img src="article2.png" alt="Article 3" />
+          <p>Content for slide 3...Content for slide 3...Content for slide 3...Content for 
+            slide 3...Content for slide 3...Content for slide 3...Content for slide 3...Co
+            ntent for slide 3...Coe 3...Content for sl
+            ide 3...Content for slide 3...Content for slide 3...Content for slide 3...Content for slide 3...</p>
+        </div>
+      </div>
+
+      {/* Slide 4 */}
+      <div className={`slide ${slideIndex === 3 ? 'active' : 'inactive'}`}>
+        <h2 className="carHeader">Slide 4</h2>
+        <div className="infoContainer">
+          <img src="article2.png" alt="Article 4" />
+          <p>Content for slide 4...Content for slide 4...Content for slide 4...Content fo
+            r slide 4...Content for slide 4...Content for slide 4...Content for slide 4.
+            ..Content for slide 4...Content for slide 4...Content for slide 4...Content for slide 4...</p>
+        </div>
+      </div>
+
+      {/* Navigation Buttons */}
       <div className="box-navbutt">
         <button
           className={`navbutt ${slideIndex === 0 ? 'active' : ''}`}
@@ -58,12 +92,13 @@ function Carousel() {
           className={`navbutt ${slideIndex === 2 ? 'active' : ''}`}
           onClick={() => buttSlide(2)}
         />
-                <button
+        <button
           className={`navbutt ${slideIndex === 3 ? 'active' : ''}`}
           onClick={() => buttSlide(3)}
         />
       </div>
 
+      {/* Navigation Arrows */}
       <button className="car_buttons" id="prev" onClick={() => nextSlide(-1)}>❮</button>
       <button className="car_buttons" id="next" onClick={() => nextSlide(1)}>❯</button>
     </div>
@@ -128,7 +163,7 @@ function ThemeChange() {
 }
 
 function CreateText() {
-  const [text, changeText] = useState("Header №1");
+  const [text, changeText] = useState("the best Header!");
 
   return (
     <>
@@ -148,7 +183,7 @@ function App() {
     <div className="App">
       <ThemeChange />
       <h1 id="mainheader">Factify</h1>
-      <CreateText />      
+      <CreateText />
       <Carousel />
     </div>
   );
