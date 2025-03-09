@@ -33,7 +33,6 @@ function Carousel() {
 
   return (
     <div className="element-background" id="carousel">
-    <div className="element-background" id="carousel">
       <div className="slide" style={{ transform: slideIndex === 0 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 1</h2>
       </div>
@@ -77,23 +76,18 @@ function Carousel() {
 function ThemeChange() {
   const [i, changei] = useState(0);
   const [i2, changei2] = useState(0);
-  const [i2, changei2] = useState(0);
 
   const themes = ["whiteButton", "whiteButton", "blueButton"];
-  const themes2 = ["blueButton", "blackButton", "whiteButton"];
   const themes2 = ["blueButton", "blackButton", "whiteButton"];
   const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
 
   const CycleTheme = () => {
     const nextIndex = (i + 1) % themes.length;
     const nextIndex2 = (i2 + 1) % themes2.length;
-    const nextIndex2 = (i2 + 1) % themes2.length;
     changei(nextIndex);
     changei2(nextIndex2);
     changei2(nextIndex2);
 
-    const buttons = document.getElementsByClassName("main_buttons");
-    const carButt = document.getElementsByClassName("car_buttons");
     const buttons = document.getElementsByClassName("main_buttons");
     const carButt = document.getElementsByClassName("car_buttons");
 
