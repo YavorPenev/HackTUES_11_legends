@@ -140,7 +140,6 @@ function ThemeChange() {
   return (
     <div id='second-box'>
       <button  className="main_buttons" id='fifth-button' onClick={CycleTheme}>
-      <button  className="main_buttons" id='fifth-button' onClick={CycleTheme}>
         <FontAwesomeIcon icon={faCircleHalfStroke} />
       </button>
     </div>
