@@ -32,7 +32,7 @@ function Carousel() {
   }, []);
 
   return (
-    <div className="main_buttons" id="carousel">
+    <div className="element-background" id="carousel">
       <div className="slide" style={{ transform: slideIndex === 0 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 1</h2>
       </div>
@@ -45,8 +45,6 @@ function Carousel() {
       <div className="slide" style={{ transform: slideIndex === 3 ? 'translateX(0)' : 'translateX(100%)' }}>
         <h2>Slide 4</h2>
       </div>
-      
-
 
       <div className="box-navbutt">
         <button
@@ -67,38 +65,58 @@ function Carousel() {
         />
       </div>
 
-      <button id="prev" onClick={() => nextSlide(-1)}>❮</button>
-      <button id="next" onClick={() => nextSlide(1)}>❯</button>
+      <button className="car_buttons" id="prev" onClick={() => nextSlide(-1)}>❮</button>
+      <button className="car_buttons" id="next" onClick={() => nextSlide(1)}>❯</button>
     </div>
   );
 }
 
 function ThemeChange() {
   const [i, changei] = useState(0);
+  const [i2, changei2] = useState(0);
 
   const themes = ["whiteButton", "whiteButton", "blueButton"];
+  const themes2 = ["blueButton", "blackButton", "whiteButton"];
   const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
 
   const CycleTheme = () => {
     const nextIndex = (i + 1) % themes.length;
+    const nextIndex2 = (i2 + 1) % themes2.length;
     changei(nextIndex);
+    changei2(nextIndex2);
 
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.getElementsByClassName("main_buttons");
+    const carButt = document.getElementsByClassName("car_buttons");
 
-    document.body.classList.remove(...backgroundThemes);
-    buttons.forEach((button) => {
+    for(let button of buttons)
+    {
       button.classList.remove("whiteButton", "blueButton");
-    });
+    }
+
+    
+    for(let button of carButt)
+    {
+      button.classList.remove("whiteButton", "blueButton", "blackButton");
+    }  
+
+    document.body.classList.remove(...backgroundThemes);    
 
     document.body.classList.add(backgroundThemes[nextIndex]);
-    buttons.forEach((button) => {
+
+    for(let button of buttons)
+    {
       button.classList.add(themes[nextIndex]);
-    });
+    }
+
+    for(let button of carButt)
+    {
+      button.classList.add(themes2[nextIndex]);
+    }
   };
 
   return (
     <div id='second-box'>
-      <button  class="main_buttons" id='fifth-button' onClick={CycleTheme}>
+      <button  className="main_buttons" id='fifth-button' onClick={CycleTheme}>
         <FontAwesomeIcon icon={faCircleHalfStroke} />
       </button>
     </div>
@@ -112,10 +130,10 @@ function CreateText() {
     <>
       <h2 id="forehead">This is {text}</h2>
       <div className='buttflex'>
-        <button class="main_buttons" onClick={() => changeText("Header №1")}>Click me for different header!</button>
-        <button class="main_buttons" onClick={() => changeText("Header №2")}>Click me for different header!</button>
-        <button class="main_buttons" onClick={() => changeText("Header №3")}>Click me for different header!</button>
-        <button class="main_buttons" onClick={() => changeText("Header №4")}>Click me for different header!</button>
+        <button className="main_buttons" onClick={() => changeText("the best Header!")}>Click me for different header!</button>
+        <button className="main_buttons" onClick={() => changeText("the sad Header...")}>Click me for different header!</button>
+        <button className="main_buttons" onClick={() => changeText("the header nobody likes :(")}>Click me for different header!</button>
+        <button className="main_buttons" onClick={() => changeText("the popular header!!!")}>Click me for different header!</button>
       </div>
     </>
   );
