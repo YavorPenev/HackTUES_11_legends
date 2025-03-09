@@ -5,8 +5,6 @@ import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-
-
 function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -67,8 +65,6 @@ function Carousel() {
 
       <button className="car_buttons" id="prev" onClick={() => nextSlide(-1)}>❮</button>
       <button className="car_buttons" id="next" onClick={() => nextSlide(1)}>❯</button>
-      <button className="car_buttons" id="prev" onClick={() => nextSlide(-1)}>❮</button>
-      <button className="car_buttons" id="next" onClick={() => nextSlide(1)}>❯</button>
     </div>
   );
 }
@@ -76,49 +72,44 @@ function Carousel() {
 function ThemeChange() {
   const [i, changei] = useState(0);
   const [i2, changei2] = useState(0);
+  const [indexElement, changeElement] = useState(0);
 
   const themes = ["whiteButton", "whiteButton", "blueButton"];
   const themes2 = ["blueButton", "blackButton", "whiteButton"];
+  const elementThemes = ["whiteElement", "whiteElement", "blueElement"];
   const backgroundThemes = ["blueBackground", "blackBackground", "whiteBackground"];
 
   const CycleTheme = () => {
+
     const nextIndex = (i + 1) % themes.length;
     const nextIndex2 = (i2 + 1) % themes2.length;
+    const nextElement = (indexElement + 1) % elementThemes.length;
     changei(nextIndex);
     changei2(nextIndex2);
-    changei2(nextIndex2);
+    changeElement(nextElement);
 
     const buttons = document.getElementsByClassName("main_buttons");
     const carButt = document.getElementsByClassName("car_buttons");
+    const elements = document.getElementsByClassName("element-background");
 
-    for(let button of buttons)
-    {
     for(let button of buttons)
     {
       button.classList.remove("whiteButton", "blueButton");
     }
 
-    
     for(let button of carButt)
     {
       button.classList.remove("whiteButton", "blueButton", "blackButton");
     }  
 
-    document.body.classList.remove(...backgroundThemes);    
+    for(let element of elements)
+    {
+      element.classList.remove("whiteElement", "blueElement");
     }
 
-    
-    for(let button of carButt)
-    {
-      button.classList.remove("whiteButton", "blueButton", "blackButton");
-    }  
-
-    document.body.classList.remove(...backgroundThemes);    
+    document.body.classList.remove(...backgroundThemes);      
 
     document.body.classList.add(backgroundThemes[nextIndex]);
-
-    for(let button of buttons)
-    {
 
     for(let button of buttons)
     {
@@ -127,13 +118,12 @@ function ThemeChange() {
 
     for(let button of carButt)
     {
-      button.classList.add(themes2[nextIndex]);
-    }
+      button.classList.add(themes2[nextIndex2]);
     }
 
-    for(let button of carButt)
+    for(let element of elements)
     {
-      button.classList.add(themes2[nextIndex]);
+      element.classList.add(elementThemes[nextElement]);
     }
   };
 
