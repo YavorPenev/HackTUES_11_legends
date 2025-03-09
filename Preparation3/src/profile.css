@@ -9,6 +9,7 @@ body, html {
     display: flex;
     flex-direction: row; 
     height: 100vh; 
+    justify-content: space-between;
 }
 
 .buttons {
@@ -49,7 +50,6 @@ body, html {
     justify-content: center; 
     padding: 20px;
     background-color: #fff;
-    margin-left: 30%;
     padding-right: 7%;
 }
 
@@ -86,4 +86,6 @@ body, html {
 .pcontainer{
     display:flex;
     flex-direction:row;
+    margin-right: 8%;
+    justify-content: space-between;
 }
