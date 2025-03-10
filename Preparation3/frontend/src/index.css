@@ -2,6 +2,7 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: rgb(31, 2, 84);
     color: white;
+    margin: 0px;
 }
 
 header {
@@ -56,8 +57,7 @@ header {
     align-content: center;
 }
 
-#nav_right_button
-{
+#nav_right_button {
     padding: 5px, 5px, 5ox, 5px;
 }
 
@@ -188,16 +188,16 @@ header {
     margin-left: 25%;
     margin-right: 25%;
     width: 50%;
-    max-width: 1200px;  
-    margin-bottom: 50px;  
+    max-width: 1200px;
+    margin-bottom: 50px;
 }
 
 .slide {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 70%;
-    height:max-content;
+    justify-content: space-evenly;
+    width: 64%;
+    height: max-content;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
@@ -205,8 +205,8 @@ header {
     position: absolute;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
     padding-bottom: 10%;
     padding-top: 3%;
 }
@@ -215,13 +215,13 @@ header {
     opacity: 1;
     transform: translateX(0);
 }
-  
+
 .slide.inactive {
     opacity: 0;
     transform: translateX(-100%);
 }
 
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -229,8 +229,7 @@ header {
     gap: 8%;
 }
 
-.carHeader
-{
+.carHeader {
     margin: 0px;
 }
 
@@ -320,46 +319,53 @@ footer {
     margin-bottom: 20px;
 }
 
-.section2_footer
-{
+.section2_footer {
     margin-top: 3%;
     display: flex;
     flex-direction: row;
     margin-bottom: 1%;
 }
 
-.section1_footer .col, .section2_footer .col {
+.section1_footer .col,
+.section2_footer .col {
     flex: 1;
     margin: 0 10px;
 }
 
-.section1_footer .col h5, .section2_footer .col h5 {
+.section1_footer .col h5,
+.section2_footer .col h5 {
     margin-bottom: 15px;
     font-size: 18px;
     color: #FFF;
 }
 
-.section1_footer .col p, .section2_footer .col p, 
-.section1_footer .col ul, .section2_footer .col ul {
+.section1_footer .col p,
+.section2_footer .col p,
+.section1_footer .col ul,
+.section2_footer .col ul {
     font-size: 14px;
     color: #CCC;
 }
 
-.section1_footer .col ul, .section2_footer .col ul {
+.section1_footer .col ul,
+.section2_footer .col ul {
     list-style-type: none;
     padding: 0;
 }
 
-.section1_footer .col ul li, .section2_footer .col ul li {
+.section1_footer .col ul li,
+.section2_footer .col ul li {
     margin-bottom: 10px;
 }
 
-.section1_footer .col ul li a, .section2_footer .col ul li a {
+.section1_footer .col ul li a,
+.section2_footer .col ul li a {
     color: #CCC;
     text-decoration: none;
 }
 
-.section1_footer .col ul li a:hover, .section2_footer .col ul li a:hover {
+.section1_footer .col ul li a:hover,
+.section2_footer .col ul li a:hover {
     color: #FFF;
 }
 
@@ -368,7 +374,7 @@ footer {
     padding: 0;
     text-align: center;
     margin: 20px 0;
-   
+
 }
 
 .foote_bottom_ul_amrc li {

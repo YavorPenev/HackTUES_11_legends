@@ -23,7 +23,7 @@ function Carousel() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide(1);
-    }, 9999999999);
+    }, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
