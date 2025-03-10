@@ -1,3 +1,9 @@
+body{
+    background: linear-gradient(135deg, #1E90FF, #FFFFFF);
+    font-family: sans-serif;
+}
+
+
 .zaglavie{
     font-size: 250%;
     text-align: center;
