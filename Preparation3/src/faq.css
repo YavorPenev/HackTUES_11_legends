@@ -1,0 +1,25 @@
+.zaglavie{
+    font-size: 250%;
+    text-align: center;
+}
+
+.section{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #9e9e9e;
+    width: 60%;
+    margin-bottom: 1%;
+}
+
+.question{
+    font-size: 130%;
+}
+
+.answer{
+    font-size: 100%;
+    text-align: center;
+    margin-top: 1%;
+}
