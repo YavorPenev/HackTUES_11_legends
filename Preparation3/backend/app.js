@@ -18,28 +18,28 @@ db.connect((err) => {
 });
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "public", "index.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "index.html"), (err) => {
         if (err) {
-            console.error(err);
-            res.status(500).send("Error loading index.html");
+            console.error("Error loading index.html:", err);
+            res.status(500).send("Internal Server Error: Unable to load index.html");
         }
     });
 });
 
 router.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "public", "signup.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "signup.html"), (err) => {
         if (err) {
-            console.error(err);
-            res.status(500).send("Error loading signup.html");
+            console.error("Error loading signup.html:", err);
+            res.status(500).send("Internal Server Error: Unable to load signup.html");
         }
     });
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "public", "login.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "login.html"), (err) => {
         if (err) {
-            console.error(err);
-            res.status(500).send("Error loading login.html");
+            console.error("Error loading login.html:", err);
+            res.status(500).send("Internal Server Error: Unable to load login.html");
         }
     });
 });
