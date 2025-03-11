@@ -1,37 +1,35 @@
-document.getElementById("signup-btn").addEventListener("click", handleSignup);
+document.getElementById('signup-btn').addEventListener('click', async () => {
+    // Get form data
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-function handleSignup() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
+    // Validate input
     if (!username || !password) {
-        alert("Please fill in all fields.");
+        alert('Please fill in all fields');
         return;
     }
 
     // Send a POST request to the backend
-    fetch("/signup", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-    })
-    .then((response) => {
-        if (response.redirected) {
-            // Redirect to the login page if signup is successful
-            window.location.href = response.url;
+    try {
+        const response = await fetch('/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+        });
+
+        const result = await response.json();
+
+        // Handle the response
+        if (response.ok) {
+            alert('Signup successful!');
+            window.location.href = '/login'; // Redirect to the login page
         } else {
-            return response.json(); // Handle errors
+            alert(result.error || 'Signup failed');
         }
-    })
-    .then((data) => {
-        if (data && data.error) {
-            alert(data.error); // Display error message
-        }
-    })
-    .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-    });
-}
+    } catch (err) {
+        console.error('Error during signup:', err);
+        alert('An error occurred. Please try again.');
+    }
+});
