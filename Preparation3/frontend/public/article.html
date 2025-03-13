@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <link rel="stylesheet" href="../src/styles/faq1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1E90FF, #FFFFFF);
+        }
+
+        .choices {
+            text-align: center;
+            padding: 1%;
+            border-radius: 8px;
+            background-color: rgb(95, 206, 234);
+            margin-bottom: 20px;
+        }
+
+        .choices button {
+            margin-right: 9px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: rgb(29, 159, 215);
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .choices button:hover {
+            background-color: #ffffff;
+            color: rgb(29, 159, 215);
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: rgb(29, 159, 215);
+        }
+
+        .content p {
+            color: #333;
+        }
+
+        .button1 {
+            background-color: rgb(29, 159, 215);
+            color: aliceblue;
+            border: none;
+            font-size: medium;
+        }
+
+        .tags {
+            text-align: center;
+            border: solid;
+            border-radius: 10px;
+        }
+
+        .form-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .form-container input[type="text"] {
+            width: 30%; /* Задаваме по-малка ширина за текстовото поле за заглавието */
+            padding: 10px;
+            margin-left: none;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 600px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="choices">
+        <button class="button1" onclick="showContent('content1')">Sport</button>
+        <button class="button1" onclick="showContent('content2')">History</button>
+        <button class="button1" onclick="showContent('content3')">Science</button>
+        <button class="button1" onclick="showContent('content4')">Politics</button>
+        <button class="button1" onclick="showContent('content5')">Geography</button>
+        <button class="button1" onclick="showContent('content6')">Space</button>
+        <button class="button1" onclick="showContent('content7')">Technology</button>
+        <button class="button1" onclick="showContent('content8')">Health</button>
+        <button class="button1" onclick="showContent('content9')">Education</button>
+        <button class="button1" onclick="showContent('content10')">Entertainment</button>
+        <button class="button1" onclick="showContent('content11')">Travel</button>
+        <button class="button1" onclick="showContent('content12')">Food</button>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content divs
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Show the selected content div
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+
+    <div id="content1" class="content">
+        <h2 class="tags"><b>Tag: Sport</b></h2>
+        <p>This is the content for Sport.</p>
+    </div>
+    <div id="content2" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: History</b></h2>
+        <p>This is the content for History.</p>
+    </div>
+    <div id="content3" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Science</b></h2>
+        <p>This is the content for Science.</p>
+    </div>
+    <div id="content4" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Politics</b></h2>
+        <p>This is the content for Politics.</p>
+    </div>
+    <div id="content5" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Geography</b></h2>
+        <p>This is the content for Geography.</p>
+    </div>
+    <div id="content6" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Space</b></h2>
+        <p>This is the content for Space.</p>
+    </div>
+    <div id="content7" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Technology</b></h2>
+        <p>This is the content for Technology.</p>
+    </div>
+    <div id="content8" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Health</b></h2>
+        <p>This is the content for Health.</p>
+    </div>
+    <div id="content9" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Education</b></h2>
+        <p>This is the content for Education.</p>
+    </div>
+    <div id="content10" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Entertainment</b></h2>
+        <p>This is the content for Entertainment.</p>
+    </div>
+    <div id="content11" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Travel</b></h2>
+        <p>This is the content for Travel.</p>
+    </div>
+    <div id="content12" class="content" style="display: none;">
+        <h2 class="tags"><b>Tag: Food</b></h2>
+        <p>This is the content for Food.</p>
+    </div>
+
+    <div class="form-container">
+        <input type="text" id="articleTitle" placeholder="Enter article title">
+        <textarea id="articleContent" maxlength="6000" placeholder="Enter article content (up to 6000 characters)"></textarea>
+    </div>
+</body>
+</html>
