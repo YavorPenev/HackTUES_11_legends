@@ -7,7 +7,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE article (
+CREATE TABLE article_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50)  NOT NULL,
     article_text VARCHAR(6000) NOT NULL
