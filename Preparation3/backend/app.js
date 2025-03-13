@@ -8,8 +8,9 @@ const router = express.Router();
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "efedrin12",
-    database: "yourdatabase"
+    password: "kris7504",
+    database: "yourdatabase",
+    port: 3306
 });
 
 db.connect((err) => {
