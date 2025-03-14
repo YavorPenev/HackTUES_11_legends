@@ -45,10 +45,10 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/article", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "public", "login.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "article.html"), (err) => {
         if (err) {
             console.error("Error loading login.html:", err);
-            res.status(500).json({ error: "Internal Server Error: Unable to load login.html" });
+            res.status(500).json({ error: "Internal Server Error: Unable to load article.html" });
         }
     });
 });
