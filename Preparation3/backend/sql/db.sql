@@ -10,5 +10,5 @@ CREATE TABLE users (
 CREATE TABLE article_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50)  NOT NULL,
-    article_text VARCHAR(6000) NOT NULL
+    article_text TEXT NOT NULL
 );

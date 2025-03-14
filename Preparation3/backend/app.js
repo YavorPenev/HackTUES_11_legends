@@ -44,6 +44,15 @@ router.get("/login", (req, res) => {
     });
 });
 
+router.get("/article", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "article.html"), (err) => {
+        if (err) {
+            console.error("Error loading login.html:", err);
+            res.status(500).json({ error: "Internal Server Error: Unable to load article.html" });
+        }
+    });
+});
+
 router.post("/signup", async (req, res) => {
     const { username, password } = req.body;
 
@@ -95,6 +104,24 @@ router.post("/login", async (req, res) => {
     } catch (err) {
         console.error("Error during login:", err);
         res.status(500).json({ error: "An error occurred. Please try again." });
+    }
+});
+
+router.post('/article', async (req, res) => {
+    try {
+        const { title, article_text } = req.body;
+
+        if (!title || !article_text) {
+            return res.status(400).json({ error: "Title and article text are required!" });
+        }
+
+        const sql = "INSERT INTO article_history (title, article_text) VALUES (?, ?)";
+        const [result] = await db.execute(sql, [title, article_text]);
+
+        res.json({ message: "Article added successfully!", articleId: result.insertId });
+    } catch (error) {
+        console.error("Error inserting article:", error);
+        res.status(500).json({ error: "Database error!" });
     }
 });
 

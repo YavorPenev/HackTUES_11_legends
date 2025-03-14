@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,10 @@
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #1E90FF, #FFFFFF);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         }
 
         .choices {
@@ -17,6 +22,13 @@
             border-radius: 8px;
             background-color: rgb(95, 206, 234);
             margin-bottom: 20px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
+            margin-bottom: 5%;
         }
 
         .choices button {
@@ -41,7 +53,9 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
+            margin: 100px 20px 20px 20px;
+            /* Adjust this value based on the height of the .choices section */
+            width: 80%;
         }
 
         .content h2 {
@@ -67,30 +81,37 @@
         }
 
         .form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
             text-align: center;
             margin: 20px;
+            width: 80%;
         }
 
         .form-container input[type="text"] {
-            width: 30%; /* Задаваме по-малка ширина за текстовото поле за заглавието */
+            width: 100%;
+            max-width: 30%;
             padding: 10px;
-            margin-left: none;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            text-align: left;
         }
 
         .form-container textarea {
-            width: 80%;
+            width: 110%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
             height: 600px;
             resize: none;
+            max-width: 94%;
         }
     </style>
 </head>
+
 <body>
     <div class="choices">
         <button class="button1" onclick="showContent('content1')">Sport</button>
@@ -103,11 +124,46 @@
         <button class="button1" onclick="showContent('content8')">Health</button>
         <button class="button1" onclick="showContent('content9')">Education</button>
         <button class="button1" onclick="showContent('content10')">Entertainment</button>
-        <button class="button1" onclick="showContent('content11')">Travel</button>
-        <button class="button1" onclick="showContent('content12')">Food</button>
     </div>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('submit').addEventListener('click', async (event) => {
+                event.preventDefault(); // Предотвратява презареждането
+
+                const title = document.getElementById('title').value.trim();
+                const article_text = document.getElementById('article_text').value.trim();
+
+                if (!title || !article_text) {
+                    alert("Title and article text are required!");
+                    return;
+                }
+
+                try {
+                    const response = await fetch("http://localhost:8080/api/article", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ title, article_text })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert("Article added successfully!");
+                        document.getElementById('title').value = "";
+                        document.getElementById('article_text').value = "";
+                    } else {
+                        alert(`Error: ${result.error}`);
+                    }
+                } catch (error) {
+                    console.error("Error submitting article:", error);
+                    alert("An error occurred. Please try again.");
+                }
+            });
+        });
         function showContent(contentId) {
             // Hide all content divs
             const contents = document.querySelectorAll('.content');
@@ -119,57 +175,53 @@
     </script>
 
     <div id="content1" class="content">
-        <h2 class="tags"><b>Tag: Sport</b></h2>
-        <p>This is the content for Sport.</p>
+        <h2 class="tags"><b>- Tag: Sport -</b></h2>
+
     </div>
     <div id="content2" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: History</b></h2>
-        <p>This is the content for History.</p>
+        <h2 class="tags"><b>- Tag: History - </b></h2>
+
     </div>
     <div id="content3" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Science</b></h2>
-        <p>This is the content for Science.</p>
+        <h2 class="tags"><b>- Tag: Science - </b></h2>
+
     </div>
     <div id="content4" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Politics</b></h2>
-        <p>This is the content for Politics.</p>
+        <h2 class="tags"><b>- Tag: Politics -</b></h2>
+
     </div>
     <div id="content5" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Geography</b></h2>
-        <p>This is the content for Geography.</p>
+        <h2 class="tags"><b>- Tag: Geography -</b></h2>
+
     </div>
     <div id="content6" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Space</b></h2>
-        <p>This is the content for Space.</p>
+        <h2 class="tags"><b>- Tag: Space -</b></h2>
+
     </div>
     <div id="content7" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Technology</b></h2>
-        <p>This is the content for Technology.</p>
+        <h2 class="tags"><b>- Tag: Technology -</b></h2>
+
     </div>
     <div id="content8" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Health</b></h2>
-        <p>This is the content for Health.</p>
+        <h2 class="tags"><b>- Tag: Health -</b></h2>
+
     </div>
     <div id="content9" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Education</b></h2>
-        <p>This is the content for Education.</p>
+        <h2 class="tags"><b>- Tag: Education - </b></h2>
+
     </div>
     <div id="content10" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Entertainment</b></h2>
-        <p>This is the content for Entertainment.</p>
-    </div>
-    <div id="content11" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Travel</b></h2>
-        <p>This is the content for Travel.</p>
-    </div>
-    <div id="content12" class="content" style="display: none;">
-        <h2 class="tags"><b>Tag: Food</b></h2>
-        <p>This is the content for Food.</p>
+        <h2 class="tags"><b>- Tag: Entertainment - </b></h2>
+
     </div>
 
+
     <div class="form-container">
-        <input type="text" id="articleTitle" placeholder="Enter article title">
-        <textarea id="articleContent" maxlength="6000" placeholder="Enter article content (up to 6000 characters)"></textarea>
+        <input id="title" style="margin-top: -1%;  margin-left: none;" type="text" placeholder="Enter article title">
+        <textarea id="article_text" id="articleContent" maxlength="6000"
+            placeholder="Enter article content (up to 6000 characters)"></textarea>
     </div>
+    <button type="button" id="submit"><b>Submit</b></button>
 </body>
+
 </html>
