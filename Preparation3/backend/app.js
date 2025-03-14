@@ -8,7 +8,7 @@ const router = express.Router();
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
- password: "Lab_007",
+ password: "efedrin12",
     database: "yourdatabase"
 });
 
@@ -18,7 +18,7 @@ db.connect((err) => {
 });
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "public", "index.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"), (err) => {
         if (err) {
             console.error("Error loading index.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load index.html" });
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "public", "signup.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "signup.html"), (err) => {
         if (err) {
             console.error("Error loading signup.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load signup.html" });
@@ -36,7 +36,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "public", "login.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "build", "login.html"), (err) => {
         if (err) {
             console.error("Error loading login.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load login.html" });
