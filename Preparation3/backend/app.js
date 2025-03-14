@@ -8,7 +8,7 @@ const router = express.Router();
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
- password: "efedrin12",
+ password: "Lab_007",
     database: "yourdatabase"
 });
 
@@ -18,7 +18,7 @@ db.connect((err) => {
 });
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "build", "index.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "index.html"), (err) => {
         if (err) {
             console.error("Error loading index.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load index.html" });
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "build", "signup.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "signup.html"), (err) => {
         if (err) {
             console.error("Error loading signup.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load signup.html" });
@@ -36,7 +36,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "build", "login.html"), (err) => {
+    res.sendFile(path.join(__dirname, "..", "frontend", "public", "login.html"), (err) => {
         if (err) {
             console.error("Error loading login.html:", err);
             res.status(500).json({ error: "Internal Server Error: Unable to load login.html" });
@@ -95,6 +95,24 @@ router.post("/login", async (req, res) => {
     } catch (err) {
         console.error("Error during login:", err);
         res.status(500).json({ error: "An error occurred. Please try again." });
+    }
+});
+
+router.post('/article', async (req, res) => {
+    try {
+        const { title, article_text } = req.body;
+
+        if (!title || !article_text) {
+            return res.status(400).json({ error: "Title and article text are required!" });
+        }
+
+        const sql = "INSERT INTO article_history (title, article_text) VALUES (?, ?)";
+        const [result] = await db.execute(sql, [title, article_text]);
+
+        res.json({ message: "Article added successfully!", articleId: result.insertId });
+    } catch (error) {
+        console.error("Error inserting article:", error);
+        res.status(500).json({ error: "Database error!" });
     }
 });
 
