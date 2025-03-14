@@ -8,7 +8,7 @@ const router = express.Router();
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
- password: "kris7504",
+ password: "efedrin12",
     database: "yourdatabase"
 });
 
@@ -107,22 +107,21 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.post('/article', async (req, res) => {
-    try {
-        const { title, article_text } = req.body;
+router.post('/article', (req, res) => {
+    const { title, article_text } = req.body;
 
-        if (!title || !article_text) {
-            return res.status(400).json({ error: "Title and article text are required!" });
+    if (!title || !article_text) {
+        return res.status(400).json({ error: "Title and article text are required!" });
+    }
+
+    const sql = "INSERT INTO article_history (title, article_text) VALUES (?, ?)";
+
+    db.query(sql, [title, article_text], (err, result) => {
+        if (err) {
+            console.error("Error inserting article:", err);
+            return res.status(500).json({ error: "Database error!" });
         }
 
-        const sql = "INSERT INTO article_history (title, article_text) VALUES (?, ?)";
-        const [result] = await db.execute(sql, [title, article_text]);
-
         res.json({ message: "Article added successfully!", articleId: result.insertId });
-    } catch (error) {
-        console.error("Error inserting article:", error);
-        res.status(500).json({ error: "Database error!" });
-    }
+    });
 });
-
-module.exports = router;
