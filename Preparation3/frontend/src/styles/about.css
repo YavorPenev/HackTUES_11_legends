@@ -1,3 +1,8 @@
+body{
+    font-family: system-ui;
+    background-color:rgb(255, 238, 216);
+}
+
 h1{
     text-align: center;
 }
@@ -9,30 +14,45 @@ h1{
     flex-direction: column;
     margin-left: 10%;
     margin-right: 10%;
+    align-content: center;
+    align-items: center;
+
 }
 .flexg{
     display: flex;
     flex-direction: row;
-    background-color: blue;
+    background-color: rgb(31, 2, 84);
     margin: 3%;
     border-radius: 15px;
     padding-top: 3%;
     padding-bottom: 3%;
+    color: white;
+    gap: 5%;
+    padding-left: 4%;
 }
 .img{
     display: flex;
     justify-content: start;
-    width: 45%;
+    width: 100%;
     height: auto;
-    margin-left: 2%;
     border-radius: 15px;
 }
+
+
+.img-container{
+    width: 39%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
 .flexm{
     display: flex;
-    justify-content: start;
-    margin-left: -17%;
-    font-size: x-large;
-    width: 65%;
+    justify-content: end;
+    font-size: 1em;
+    width: 49%;
+    text-align:justify;
 }
 .flexmt{
     font-size: xx-large;
