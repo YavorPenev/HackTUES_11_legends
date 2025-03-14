@@ -79,11 +79,13 @@
             }
 
             try {
-                const response = await fetch("/api/article", { 
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ title, article_text })
-                });
+                    const response = await fetch("http://localhost:8080/article", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ title, article_text })
+                    });
 
                 const result = await response.json();
 
