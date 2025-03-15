@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../src/styles/index.css';
-import { FontAwesomeIcon } from 'react-icons/fa';
-import { faCircleHalfStroke } from 'react-icons/fa';
+import '../src/styles/index.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
 
 function Carousel() {
   const [slideIndex, setSlideIndex] = useState(0);
