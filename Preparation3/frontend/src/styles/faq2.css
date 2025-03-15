@@ -2,7 +2,10 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background:rgb(52, 19, 112);
+    background: linear-gradient(135deg, rgb(31, 2, 84), #1E90FF);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
 
 .zaglavie {
@@ -10,7 +13,7 @@ body, html {
     font-size: 2em;
     color: white;
     margin-left: 3%;
-    margin-top: 5%;
+    padding-top: 5%;
 }
 
 .container {
@@ -18,7 +21,6 @@ body, html {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
-    background: rgb(52, 19, 112);
     margin-top: 5%;
 }
 
