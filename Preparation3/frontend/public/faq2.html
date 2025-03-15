@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="../src/styles/faq2.css">
+</head>
+
+<body>
+    <h1 class="zaglavie">- Frequently Asked Questions -</h1>
+    <div class="container">
+        <div class="big-section">
+            <div class="section">
+                <div class="question">
+                    1. How do I create an account?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Click "Sign Up," enter your email and password, then confirm your email. ✅</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    2. How can I change my password?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Go to "Settings" → "Change Password" and follow the steps. 🔒</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    3. How do I delete my account?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Visit account settings and select "Delete Account." ❌</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    4. How can I download the mobile app?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Find us on Google Play or the App Store by searching for "[App Name]." 📲</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    5. How do I contact support?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Send us a message via "Contact Us" or email support@example.com. 📨</div>
+            </div>
+        </div>
+        <div class="big-section">
+            <div class="section">
+                <div class="question">
+                    6. How do I reset a forgotten password?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Click "Forgot Password?" on the login page and follow the instructions. 🔁</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    7. How do I enable dark mode?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Go to "Settings" and toggle "Dark Mode" on. 🌙</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    8. How do I change the website language?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">In "Settings," select your preferred language from the dropdown. 🌍</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    9. How do I unsubscribe from email notifications?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Disable "Receive Notifications" in your profile settings. 📩❌</div>
+            </div>
+            <div class="section">
+                <div class="question">
+                    10. How can I report a user?
+                    <span class="toggle" onclick="toggleAnswer(this)">➕</span>
+                </div>
+                <div class="answer">Click "Report" on their profile and describe the issue. 🚨</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+    const section = element.parentElement.parentElement;
+    section.classList.toggle('active');
+    element.textContent = section.classList.contains('active') ? '➖' : '➕';
+}
+    </script>
+</body>
+
+</html>

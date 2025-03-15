@@ -8,54 +8,105 @@
     <link rel="stylesheet" href="../src/styles/profile.css">
     <script src="https://kit.fontawesome.com/eb00f32ec1.js" crossorigin="anonymous"></script>
 </head>
+</head>
 
 <body>
     <div class="container" id="container">
         <div class="buttons" id="buttons">
             <button type="button">Create an article</button>
             <button type="button">Log out</button>
+            <button type="button" onclick="location.href='about.html'"> About us </button>
+            <button type="button" onclick="location.href='faq1.html'"> FAQ </button>
             <button type="button" class="theme-button"><i class="fa-solid fa-circle-half-stroke"></i>Theme</button>
-            <button type="button">FAQ</button>
-        </div>
-    <div class="content1" id="content1">
-        <div class="content" id="content">
-            <div class="pcontainer" id="pcontainer">
-                <div class="profile" id="profile">
-                    My Profile:
-                </div>
-                <div class="profile_picture" id="profile_picture">
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="username" id="username">
-                    Dimcho_Dimov
-                </div>
-            </div>
-            <div class="description" id="description">
-                <div class="description-text">
-                    Young 40 years old promising entrepreneur that has over 69 businesses, made 420 billion $ in profits
-                    and also likes teaching young kids the beautiful discipline, called "Entrepreneurship". I'm called
-                    both the "docent" and "doctor" title which really shows my intellectual capacity. I also like
-                    working 80+ hours for the sake of entrepreneurship and to show "the normal 8-5 people" what real
-                    work is. I shower twice a year, and go to the gym once every decade.
-                </div>
-            </div>
+
         </div>
 
-        <div class="gluposti">
-            I started my journey in entrepreneurship at a very young age. By the time I was 10, I had already started my
-            first small business selling lemonade in my neighborhood. This early experience taught me the basics of running
-            a business and the importance of customer satisfaction. As I grew older, my ventures became more ambitious. In
-            high school, I launched a tech startup that developed educational software for schools. This project not only
-            earned me significant profits but also recognition in the local business community.
-            After graduating from university with a degree in Business Administration, I decided to take my entrepreneurial
-            skills to the next level. I founded several companies in various industries, including technology, finance, and
-            healthcare. Each of these ventures presented unique challenges and opportunities, but my unwavering
-            determination and innovative approach helped me overcome obstacles and achieve success.
-        </div>
+        <div class="content1" id="content1">
+            <div class="content" id="content">
+                <div class="pcontainer" id="pcontainer">
+                    <div class="profile" id="profile">
+                        My Profile:
+                    </div>
+                    <div class="profile_picture" id="profile_picture">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                    <div class="username" id="username">
+                        Dimcho_Dimov
+                    </div>
+                </div>
+                <div class="description" id="description">
+                    <div class="description-text">
+                        Young 40 years old promising entrepreneur that has over 69 businesses, made 420 billion $ in
+                        profits
+                        and also likes teaching young kids the beautiful discipline, called "Entrepreneurship". I'm
+                        called
+                        both the "docent" and "doctor" title which really shows my intellectual capacity. I also like
+                        working 80+ hours for the sake of entrepreneurship and to show "the normal 8-5 people" what real
+                        work is. I shower twice a year, and go to the gym once every decade.
+                    </div>
+                </div>
+            </div>
 
+            <div class="gluposti">
+                <div class="icon-container">
+                    <i class="fa-solid fa-rocket" onclick="showText('achievements')"></i>
+                    <i class="fa-solid fa-lightbulb" onclick="showText('goals')"></i>
+                    <i class="fa-solid fa-trophy" onclick="showText('interests')"></i>
+                    <i class="fa-solid fa-graduation-cap" onclick="showText('hobbies')"></i>
+                </div>
+
+                <div class="text-container">
+                    <div id="achievements" class="text">
+                        <h2>My Achievements:</h2>
+                        <h4>As a young, 40-year-old entrepreneur, I’ve built an impressive empire with over 69
+                            businesses, generating a staggering $420 billion in profits. My accomplishments are not just
+                            a testament to hard work but also to my relentless drive and passion for entrepreneurship.
+                            Over the years, I've earned the titles of both “Docent” and “Doctor,” reflecting my
+                            intellectual capacity and commitment to teaching the discipline of entrepreneurship. </h4>
+                    </div>
+
+                    <div id="goals" class="text">
+                        <h2>My Goals:</h2>
+                        <h4>Looking ahead, my goals are to continue expanding my business empire while also inspiring
+                            the next generation of entrepreneurs. I aim to continue mentoring and teaching young minds
+                            the true value of entrepreneurship, helping them build their own legacies. Beyond personal
+                            success, I want to reshape the way people view work and ambition, proving that true
+                            dedication means more than just the typical 9-to-5 grind.</h4>
+                    </div>
+
+                    <div id="interests" class="text">
+                        <h2>My Interests:</h2>
+                        <h4>My interests are deeply rooted in the world of business and entrepreneurship. I thrive on
+                            discovering new opportunities and taking risks that others wouldn’t dare. I also have a
+                            profound interest in educating young minds, particularly in the field of entrepreneurship.
+                            Teaching and guiding the future generation of innovators is something I’m incredibly
+                            passionate about</h4>
+                    </div>
+
+                    <div id="hobbies" class="text">
+                        <h2>My Hobbies:</h2>
+                        <h4>Though my work schedule is incredibly demanding, I make it a point to stay true to myself. I
+                            work tirelessly, often pushing myself beyond the normal 80-hour workweek, to show that the
+                            true essence of entrepreneurship lies in dedication, not just in clocking in 9-to-5 hours.
+                            As for personal hobbies, I live a uniquely minimalist lifestyle, which includes only
+                            showering twice a year and hitting the gym once every decade</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     </div>
 
-    
+    <script>
+        function showText(id) {
+            const texts = document.querySelectorAll('.text');
+            texts.forEach(text => text.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+
 </body>
 
 </html>

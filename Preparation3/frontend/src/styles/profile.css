@@ -2,26 +2,29 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1E90FF, #FFFFFF);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1E90FF, #87CEFA);
+    background-size: 100% 106%;
 }
 
 .container {
     display: flex;
     flex-direction: row;  
     justify-content: space-between;
-    width: 100%; /* Увеличете ширината на контейнера */
+    width: 100%;
+    
 }
 
 .buttons {
-    width: 20%; 
-    height: 94.5vh;
+    width: 10%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     padding: 20px;
     background-color: #f4f4f4;
     border-right: 1px solid #ccc;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    gap: 7%; /* Разстояние между бутоните */
 }
 
 .theme-button {
@@ -43,27 +46,36 @@ body, html {
     background-color: #007bff;
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .buttons button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .pcontainer {
     display: flex;
-    flex-direction: column; /* Подредете профила и описанието хоризонтално */
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 30%; /* Увеличете ширината на контейнера */
+    width: 25%;
+    margin-top: 0.3%;
     padding: 20px;
-    /*background-color: rgb(4, 4, 4 , 0.2);*/
     border-radius: 6px;
+    background-color: #bbdefb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-left: 5%;
+}
+
+.pcontainer:hover {
+    transform: scale(1.05);
 }
 
 .content {
     display: flex;
-    flex-direction: row; /* Подредете профила и описанието хоризонтално */
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
@@ -71,9 +83,11 @@ body, html {
 
 .profile {
     font-size: 35px;
-    font-weight: bold;  
+    font-weight: bold;
+    margin-top: -4%;
     padding: 20px;
     text-align: center;
+    color: #333;
 }
 
 .profile_picture {
@@ -87,37 +101,81 @@ body, html {
     font-size: 35px;
     font-weight: bold;
     text-align: center;
+    color: #333;
 }
 
 .description {
-    flex: 1; /* Увеличете ширината на описанието, за да заеме останалото пространство */
+    flex: 1;
     font-size: 18px;
     line-height: 1.5;
-    background-color: #007bff;
+    background-color: #bbdefb;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 4%;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-left: 5%;
+    width: 100%;
+    margin-right: 5%;
+}
+
+.description:hover {
+    transform: scale(1.05);
 }
 
 .description-text {
     font-size: 22px;
-    width: 100%; /* Уверете се, че текстът заема цялата ширина на описанието */
+    width: 85%;
+    margin-left: 2%;
 }
 
 .gluposti {
-    width: 85%;
+    width: 75%;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #007bff;
+    background-color: #89c2ff;
     border-radius: 10px;
     padding: 10px;
-    margin-left: 7.5%;
+    margin-left: 11%;
     margin-right: 7.5%;
-    margin-top: 3%;
-    
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.content1{
+.gluposti:hover {
+    transform: scale(1.05);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon-container i {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-container i:hover {
+    transform: scale(1.2);
+}
+
+
+
+.text {
+    background-color: #bbdefb;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Скриване на текстовете по подразбиране */
+    color: black;
+}
+
+.content1 {
     display: flex;
     flex-direction: column;
     width: 100%;
