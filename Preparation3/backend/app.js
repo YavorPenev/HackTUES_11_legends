@@ -8,7 +8,7 @@ const router = express.Router();
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
- password: "efedrin12",
+ password: "kris7504",
     database: "yourdatabase"
 });
 
@@ -125,3 +125,5 @@ router.post('/article', (req, res) => {
         res.json({ message: "Article added successfully!", articleId: result.insertId });
     });
 });
+
+module.exports = router;

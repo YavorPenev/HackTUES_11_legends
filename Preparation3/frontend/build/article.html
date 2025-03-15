@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+    <link rel="stylesheet" href="../src/styles/faq1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1E90FF, #FFFFFF);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px;
+            width: 80%;
+        }
+
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            max-width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container textarea {
+            height: 200px;
+            resize: none;
+        }
+
+        #submit {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(29, 159, 215);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #submit:hover {
+            background-color: #ffffff;
+            color: rgb(29, 159, 215);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form id="article-form">
+            <input id="title" type="text" placeholder="Enter article title">
+            <textarea id="article_text" maxlength="6000" placeholder="Enter article content (up to 6000 characters)"></textarea>
+            <button type="submit" id="submit"><b>Submit</b></button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('article-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Спира презареждането на страницата
+
+            const title = document.getElementById('title').value.trim();
+            const article_text = document.getElementById('article_text').value.trim();
+
+            if (!title || !article_text) {
+                alert("Title and article text are required!");
+                return;
+            }
+
+            try {
+                    const response = await fetch("http://localhost:8080/article", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ title, article_text })
+                    });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert("Article added successfully!");
+                    document.getElementById('article-form').reset(); // Изчистване на формата
+                } else {
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
+                console.error("Error submitting article:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>

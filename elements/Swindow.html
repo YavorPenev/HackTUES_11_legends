@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изскачащ прозорец с бутон и емотикони</title>
+    <style>
+        /* Основни стилове за тялото на страницата */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Стилове за основния бутон */
+        .open-popup-btn {
+            padding: 12px 27px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius:8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-popup-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Стилове за изскачащия прозорец */
+        .popup-overlay {
+            display: none; /* Скрит по подразбиране */
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .popup {
+            display: none; /* Скрит по подразбиране */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Основен бутон за отваряне на изскачащия прозорец -->
+<button class="open-popup-btn" onclick="openPopup()">😊 Отвори прозорец</button>
+
+<!-- Изскачащ прозорец -->
+<div class="popup-overlay" id="popup-overlay"></div>
+<div class="popup" id="popup">
+    <h2>📝 Информация</h2>
+    <p>Това е примерен изскачащ прозорец с информация и емотикони. 😊</p>
+    <button onclick="closePopup()">❌ Затвори</button>
+    <button>Нищо ❌</button>
+</div>
+
+<script>
+    // Функция за отваряне на изскачащия прозорец
+    function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup-overlay').style.display = 'block';
+    }
+
+    // Функция за затваряне на изскачащия прозорец
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup-overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
