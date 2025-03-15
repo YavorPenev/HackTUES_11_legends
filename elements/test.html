@@ -1,0 +1,158 @@
+<style>
+    /* Основни стилове за тялото на страницата */
+    body {
+        margin: 0; /* Премахване на margins по подразбиране */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 100%; /* Базова стойност за шрифт (16px) */
+        padding-top: 3.75rem; /* 60px / 16 = 3.75rem */
+    }
+
+    /* Стилове за хедъра */
+    header {
+        position: fixed; /* Фиксиране на хедъра в горната част */
+        top: 0;
+        left: 0;
+        width: 100%; /* Хедърът заема цялата ширина */
+        background-color: #333; /* Тъмно сив фон */
+        color: white; /* Бял текст */
+        display: flex;
+        align-items: center; /* Центриране на елементите вертикално */
+        padding: 0.625rem 1.25rem; /* 10px 20px / 16 = 0.625rem 1.25rem */
+        z-index: 1000; /* Увеличаване на z-index за да е над други елементи */
+    }
+
+    /* Лява част на хедъра: Лого и заглавие */
+    .header-left {
+        display: flex;
+        align-items: center;
+        flex: 1; /* Заема оставащото пространство */
+    }
+
+    /* Стилове за логото */
+    .logo img {
+        height: 2.5rem; /* 40px / 16 = 2.5rem */
+        margin-right: 0.625rem; /* 10px / 16 = 0.625rem */
+    }
+
+    /* Стилове за заглавието */
+    .logo-title {
+        color: white;
+        font-size: 1.25rem; /* 20px / 16 = 1.25rem */
+        font-weight: bold;
+    }
+
+    /* Централна част: Търсачка */
+    .search-bar {
+        display: flex;
+        align-items: center;
+        flex: 2; /* Заема по-голяма част от пространството */
+        justify-content: center;
+        margin: 0 1%; /* Намалено разстояние между заглавието и търсачката */
+    }
+
+    /* Стилове за полето за търсене */
+    .search-bar input {
+        width: 60%; /* Ширина на полето за търсене */
+        padding: 0.5rem; /* 8px / 16 = 0.5rem */
+        font-size: 1rem; /* 16px / 16 = 1rem */
+        border: none;
+        border-radius: 0.3125rem; /* 5px / 16 = 0.3125rem */
+    }
+
+    /* Стилове за бутона за търсене */
+    .search-bar button {
+        padding: 0.5rem 1rem; /* 8px 16px / 16 = 0.5rem 1rem */
+        margin-left: 0.3125rem; /* 5px / 16 = 0.3125rem (намалено разстояние) */
+        font-size: 1rem; /* 16px / 16 = 1rem */
+        background-color: #555; /* Сив фон за бутона */
+        color: white;
+        border: none;
+        border-radius: 0.3125rem; /* 5px / 16 = 0.3125rem */
+        cursor: pointer;
+    }
+
+    /* Ховър ефект за бутона за търсене */
+    .search-bar button:hover {
+        background-color: #444; /* По-тъмен цвят при ховър */
+    }
+
+    /* Дясна част на хедъра: Бутони */
+    .header-right {
+        margin-left: -0.3125rem; /* 5px / 16 = 0.3125rem (намалено разстояние) */
+        display: flex;
+        align-items: center;
+        flex: 1; /* Заема оставащото пространство */
+    }
+
+    /* Стилове за бутоните в дясната част */
+    .header-right button {
+        margin-left: 0.3125rem; /* 5px / 16 = 0.3125rem (намалено разстояние) */
+        padding: 0.5rem 1rem; /* 8px 16px / 16 = 0.5rem 1rem */
+        font-size: 1rem; /* 16px / 16 = 1rem */
+        background-color: #555; /* Сив фон за бутоните */
+        color: white;
+        border: none;
+        border-radius: 0.3125rem; /* 5px / 16 = 0.3125rem */
+        cursor: pointer;
+    }
+
+    /* Ховър ефект за бутоните */
+    .header-right button:hover {
+        background-color: #444; /* По-тъмен цвят при ховър */
+    }
+
+    /* Стилове за основното съдържание на страницата */
+    .content {
+        padding: 1.25rem; /* 20px / 16 = 1.25rem */
+        font-size: 1rem; /* 16px / 16 = 1rem */
+    }
+
+    /* Медийни заявки за адаптивен дизайн */
+    @media (max-width: 48rem) { /* 768px / 16 = 48rem */
+        .search-bar input {
+            width: 60%; /* Намаляване на ширината на търсачката за малки екрани */
+        }
+
+        .header-right button {
+            display: none; /* Скриване на бутоните за малки екрани */
+        }
+
+        .logo-title {
+            font-size: 1rem; /* 16px / 16 = 1rem */
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+<!-- Лява част: Лого и заглавие -->
+<div class="header-left">
+    <div class="logo">
+        <img src="logo.png" alt="Лого">
+    </div>
+    <div class="logo-title">
+        Примерно заглавие
+    </div>
+</div>
+
+<!-- Централна част: Търсачка -->
+<div class="search-bar">
+    <input type="text" placeholder="Търсене..." aria-label="Търсене">
+    <button id="count" onclick="clk()" aria-label="Търси">Търси</button>
+</div>
+
+<!-- Дясна част: Бутони -->
+<div class="header-right">
+    <button>Бутон 1</button>
+    <button>Бутон 2</button>
+    <button>Бутон 3</button>
+</div>
+<script>
+   var count=0; 
+   function clk(){
+    count++;
+    alert("clk = " + count);
+   }
+</script>
+</header>

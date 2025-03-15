@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <style>
+        body{
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          background-color: rgb(22, 66, 212);
+          color: #ffffff;
+          margin: 0px;
+        }
+        /* Main style for the footer */
+        footer {
+          display: flex;
+          flex-direction: column;
+            background-color: #333; /* Dark gray/black background */
+            color: white; /* White text */
+            padding: 30px 0; /* Padding and spacing */
+            text-align: left;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .footer-column {
+            flex: 1; /* Each column will have equal width */
+            margin: 0 15px;
+        }
+
+        /* Title of the columns */
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* Links in the columns */
+        .footer-column a {
+            color: #ddd; /* Light gray color for the links */
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: #fff; /* Change color when hovering */
+        }
+
+        /* Style for contact information */
+        .footer-column .contact-info p {
+            margin: 5px 0;
+        }
+
+        /* Media query for small screens (mobile devices) */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <p>
+    "This is an example website to demonstrate a footer layout."<br>
+    "Here you can find various examples and useful information."<br><br>
+    "Home"<br>
+    "Products"<br>
+    "Services"<br>
+    "About Us"<br><br>
+    "FAQ"<br>
+    "Privacy Policy"<br>
+    "Terms of Use"<br>
+    "Contact"<br><br>
+    Address: 123 Example Street, City, Country<br>
+    Phone: +1 234 567 890<br>
+    Email: contact@example.com<br><br>
+    Follow us on social media:<br>
+    Facebook: <a href="https://www.facebook.com/example" target="_blank">facebook.com/example</a><br>
+    Twitter: <a href="https://twitter.com/example" target="_blank">twitter.com/example</a><br>
+    Instagram: <a href="https://www.instagram.com/example" target="_blank">instagram.com/example</a><br><br>
+    Operating Hours:<br>
+    Monday to Friday: 9:00 AM - 6:00 PM<br>
+    Saturday: 10:00 AM - 4:00 PM<br>
+    Sunday: Closed<br><br>
+    © 2025 Example Company. All rights reserved.<br>
+    Designed by YourCompanyName.
+</p>
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1: About the website -->
+            <div class="footer-column">
+                <h3>About the Website</h3>
+                <p>This is an example website to demonstrate a footer layout.</p>
+                <p>Here you can find various examples and useful information.</p>
+            </div>
+
+            <!-- Column 2: Links to pages -->
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+            </div>
+
+            <!-- Column 3: Links to pages -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <!-- Column 4: Contact Info -->
+            <div class="footer-column contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Address:</strong> Sofia, Bulgaria</p>
+                <p><strong>Phone:</strong> +359 88 123 4567</p>
+                <p><strong>Email:</strong> example@domain.com</p>
+            </div>
+
+        </div>
+        <h3 style="text-align: center;">Copyright © 2025, All Rights Reserved | Designed With by <a style=" color: rgb(207, 207, 207);" href="#">LegendsTheam</a></h3>
+    </footer>
+    <!-- Footer End -->
+
+</body>
+</html>
