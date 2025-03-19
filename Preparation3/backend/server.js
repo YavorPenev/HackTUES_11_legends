@@ -7,6 +7,8 @@ app.use(express.static(path.join(__dirname, "..", "frontend", "build")));
 
 app.use("/src", express.static(path.join(__dirname, "..", "frontend", "src")));
 
+
+
 app.use(express.json());
 
 app.use("/", router);
