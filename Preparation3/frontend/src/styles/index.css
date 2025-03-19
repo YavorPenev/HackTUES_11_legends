@@ -3,6 +3,7 @@ body {
     background-color: rgb(31, 2, 84);
     color: white;
     margin: 0px;
+    margin-top: 20px;
 }
 
 header {
@@ -41,18 +42,33 @@ header {
     top: 0.3%;
 }
 
-.search-container
+#search-bar
 {
     position: absolute;
-    top: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    top: 1.5%;
     left: 50%;
     transform: translateX(-50%);
+    width: 30%;
+    height: max-content;
+    padding: 0.3%;   
 }
 
-.search-container
-{
-    height: 100%;
+.search{
     width: 100%;
+    height: 100%;
+    background-color: #ffffff00;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+.search:focus {
+    border: 0px solid #ffffff00;
+    outline: none;
 }
 
 #sub_button {
