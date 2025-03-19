@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .slideshow-container {
+            height: auto;
+            min-height: 50vh;
+            max-width: 60%;
+
+            position: relative;
+            margin: 0 auto;
+            background-color: #bbdefb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        @media (max-width: 768px) {
+            .mySlides {
+                flex-direction: column;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                height: auto;
+            }
+
+            .mySlides img {
+                width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .text {
+            width: 50%;
+            padding: 20px;
+            /* Добавете padding за по-добро разпределение на текста */
+        }
+
+        .text1 {
+            margin: 0 3%;
+        }
+
+        .text2 {
+            margin: 0 3%;
+            margin-top: 2%;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 6px;
+            color: rgb(113, 106, 106);
+            font-weight: bold;
+            font-size: 30px;
+            transition: 0.6s ease;
+            border-radius: 0 2px 2px 0;
+            user-select: none;
+            transform: translateY(-50%);
+            /* Центрирайте стрелките вертикално */
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            margin-top: -7%;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            margin-bottom: -25%;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+        <div class="container">
+            <div class="mySlides">
+                <img src="../Preparation3/frontend/public/imgmih.png" alt="Slide 1">
+                <div class="text">
+                    <h2 class="text1">The Beauty of Nature</h2>
+                    <p class="text2">Nature offers us a sanctuary from the hustle and bustle of daily life. The serene
+                        landscapes, lush forests, and tranquil waters provide a perfect escape for those seeking peace
+                        and
+                        relaxation. Whether it's a hike through the mountains, a walk along the beach, or simply sitting
+                        in
+                        a park, nature has a way of rejuvenating our spirits and reminding us of the beauty that
+                        surrounds
+                        us. The changing seasons bring new colors and experiences, making every visit to nature a unique
+                        and
+                        memorable one.</p>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="../Preparation3/frontend/public/imgdein.png" alt="Slide 2">
+                <div class="text">
+                    <h2 class="text1">Technological Innovations</h2>
+                    <p class="text2">The rapid advancement of technology has transformed the way we live, work, and
+                        communicate. From smartphones and smart homes to artificial intelligence and virtual reality,
+                        technological innovations continue to shape our future. These advancements have made our lives
+                        more
+                        convenient, efficient, and connected. However, they also bring challenges such as privacy
+                        concerns
+                        and the need for digital literacy. As we embrace new technologies, it's important to consider
+                        their
+                        impact on society and strive for a balance between innovation and ethical use.</p>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="../Preparation3/frontend/public/img77.png" alt="Slide 3">
+                <div class="text">
+                    <h2 class="text1">Culinary Delights</h2>
+                    <p class="text2">Food is not just a necessity; it's an art form that brings people together.
+                        Culinary
+                        delights from around the world offer a glimpse into different cultures and traditions. From the
+                        spicy flavors of Indian cuisine to the delicate tastes of Japanese sushi, every dish tells a
+                        story.
+                        Cooking and sharing meals with loved ones create lasting memories and strengthen bonds.
+                        Exploring
+                        new recipes and ingredients can be a fun and rewarding experience, allowing us to appreciate the
+                        diversity and creativity in the culinary world.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "flex";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 3500);
+    </script>
+</body>
+
+</html>
