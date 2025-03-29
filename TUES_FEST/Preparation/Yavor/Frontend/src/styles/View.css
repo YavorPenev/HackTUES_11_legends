@@ -1,0 +1,15 @@
+
+.view-title{
+    margin-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.view-header {
+    justify-content: space-around;
+    margin-top: 2%;
+    border-top: solid;
+    border-color:  #494747;
+    display: flex;
+    flex-direction: row;
+  }

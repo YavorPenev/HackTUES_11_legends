@@ -19,3 +19,14 @@
 Сайтът ще използва React Router, за да може потребителят да се движи между страниците.
 
 В горната част ще има навигационно меню (Header), от което може да се преминава между управлението на бележки и страницата за преглед.
+
+Database:
+CREATE SCHEMA `fest_testdb` ;
+
+CREATE TABLE `fest_testdb`.`notes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(70) NOT NULL,
+  `body` TEXT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  UNIQUE INDEX `title_UNIQUE` (`title` ASC) VISIBLE);

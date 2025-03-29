@@ -1,0 +1,14 @@
+.add-title{
+    margin-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.add-header {
+    justify-content: space-around;
+    margin-top: 2%;
+    border-top: solid;
+    border-color:  #494747;
+    display: flex;
+    flex-direction: row;
+  }
