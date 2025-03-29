@@ -99,7 +99,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import './styles/App.css';
 import View from './View'; // Импортирайте View.jsx
 import Add from './Add';
-import axios from 'axios'
+import { fetchAPI }  from './network/index'
 
 
 function App() {
@@ -115,14 +115,9 @@ function App() {
     { image: '/slide5.jpg', text: 'This is Slide 5' },
   ];
 
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8000/api");
-    setArray(response.data.fruit);
-    console.log(response.data.fruit);
-  };
-
+  
   useEffect(() => {
-    fetchAPI();
+    fetchAPI(setArray);
   }, []);
 
   useEffect(() => {
