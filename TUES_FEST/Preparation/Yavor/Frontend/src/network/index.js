@@ -8,5 +8,63 @@ const fetchAPI = async (setArray) => {
     console.log(response.data.fruit);
   };
 
+  //////////////////////////////////////////////////////////////
 
-export { fetchAPI };
+  const saveNote = async (title, body) => {
+    try {
+      const response = await axios.post("http://localhost:8000/add", {
+        title,
+        body,
+      });
+      return response.data; // Връща съобщение за успех или грешка
+    } catch (error) {
+      console.error("Error saving note:", error);
+      throw error; // Прехвърля грешката за обработка в Add.jsx
+    }
+  };
+
+  /////////////////////////////////////////////////////////////////
+
+  const fetchNotes = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/notes");
+      return response.data; // Връща списъка с бележки
+    } catch (error) {
+      console.error("Error fetching notes:", error);
+      throw error; // Прехвърля грешката за обработка в View.jsx
+    }
+  };
+
+  ///////////////////////////////////////////////////////////////////
+  
+  const deleteNote = async (title) => {
+    try {
+      const response = await axios.delete("http://localhost:8000/delete", {
+        data: { title },
+      });
+      return response.data; // Връща съобщение за успех
+    } catch (error) {
+      console.error("Error deleting note:", error);
+      throw error; // Прехвърля грешката за обработка в delete.jsx
+    }
+  };
+  
+  /////////////////////////////////////////////////////////////////////
+
+  const editNote = async (title, newTitle, newBody) => {
+  try {
+    const response = await axios.put("http://localhost:8000/edit", {
+      title,
+      newTitle,
+      newBody,
+    });
+    return response.data; // Връща съобщение за успех
+  } catch (error) {
+    console.error("Error editing note:", error);
+    throw error; // Прехвърля грешката за обработка в redact.jsx
+  }
+};
+
+  ////////////////////////////////////////////////////////////////////
+
+export { fetchAPI, saveNote, fetchNotes, deleteNote, editNote };// funkciite koito se wry]at

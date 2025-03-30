@@ -99,6 +99,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import './styles/App.css';
 import View from './View'; // Импортирайте View.jsx
 import Add from './Add';
+import Del from './delete';
+import Redact from './redact';
 import { fetchAPI }  from './network/index'
 
 
@@ -148,8 +150,8 @@ function App() {
 
             <div className="header">
               <button className="Hbutton" onClick={() => navigate('/add')}><b>New note</b></button>
-              <button className="Hbutton"><b>Redact note</b></button>
-              <button className="Hbutton"><b>Delete note</b></button>
+              <button className="Hbutton" onClick={() => navigate('/redact')}><b>Redact note</b></button>
+              <button className="Hbutton" onClick={() => navigate('/delete')}><b>Delete note</b></button>
               <button className="Hbutton" onClick={() => navigate('/notes')}><b>View notes</b></button>
             </div>
 
@@ -185,6 +187,9 @@ function App() {
       {/* Страница за преглед на бележки */}
       <Route path="/notes" element={<View />} />
       <Route path="/add" element={<Add />} />
+      <Route path="/delete" element={<Del />} />
+      <Route path="/redact" element={<Redact />} />
+
     </Routes>
   );
 }
