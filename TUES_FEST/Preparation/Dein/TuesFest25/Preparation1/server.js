@@ -47,8 +47,7 @@ app.post('/send-email', (req, res) => {
         const token = crypto.randomBytes(20).toString('hex');
         verificationLinks[token] = email;
         htmlContent = `<p>Добре дошли!</p>
-                       <p>Щракнете <a href='http://localhost:8001/homepage/${token}'>тук</a> за достъп до сайта.</p>
-                       <img src='https://via.placeholder.com/150' alt='Изображение'>`;
+                       <p>Щракнете <a href='http://localhost:8001/homepage/${token}'>тук</a> за достъп до сайта.</p>`;
     }
     
     const mailOptions = {
