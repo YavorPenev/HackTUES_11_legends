@@ -42,7 +42,8 @@ app.post('/send-email', (req, res) => {
     } else if (action === 'link') {
         const token = crypto.randomBytes(20).toString('hex');
         verificationLinks[token] = email;
-        htmlContent = `<p>Щракнете <a href='http://localhost:8000/homepage/${token}'>тук</a> за достъп до сайта.</p>`;
+       // htmlContent = `<p>Щракнете <a href='http://localhost:8000/homepage/${token}'>тук</a> за достъп до сайта.</p>`;
+       htmlContent = `<p>Щракнете <a href='http://localhost:8001'>тук</a> за достъп до сайта.</p>`;// oprawih go weche te pra]a w nachalnata stranica, no towa s tokenite ne raboti
     } else if (action === 'text-link-image') {
         const token = crypto.randomBytes(20).toString('hex');
         verificationLinks[token] = email;
