@@ -51,20 +51,19 @@ const fetchAPI = async (setArray) => {
   
   /////////////////////////////////////////////////////////////////////
 
-  const editNote = async (title, newTitle, newBody) => {
-  try {
-    const response = await axios.put("http://localhost:8000/edit", {
-      title,
-      newTitle,
-      newBody,
-    });
-    return response.data; // Връща съобщение за успех
-  } catch (error) {
-    console.error("Error editing note:", error);
-    throw error; // Прехвърля грешката за обработка в redact.jsx
-  }
-};
-
+  const editNote = async (oldTitle, newTitle, newBody) => {
+    try {
+      const response = await axios.put("http://localhost:8000/edit", {
+        oldTitle, // Използваме oldTitle, както е в бекенда
+        newTitle,
+        newBody,
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error editing note:", error);
+      throw error;
+    }
+  };
   ////////////////////////////////////////////////////////////////////
 
 export { fetchAPI, saveNote, fetchNotes, deleteNote, editNote };// funkciite koito se wry]at

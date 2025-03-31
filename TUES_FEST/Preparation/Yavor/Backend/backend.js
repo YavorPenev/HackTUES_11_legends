@@ -95,6 +95,25 @@ app.delete("/delete", (req, res) => {
 
 /////////////////////////////////////////////////////////////
 
+app.put("/edit", (req, res) => {
+    const { oldTitle, newTitle, newBody } = req.body;
+
+    if (!oldTitle || !newTitle || !newBody) {
+        return res.status(400).json({ error: "Old title, new title, and new body are required" });
+    }
+
+    const sql = "UPDATE notes SET title = ?, body = ? WHERE title = ?";
+    db.query(sql, [newTitle, newBody, oldTitle], (err, result) => {
+        if (err) {
+            console.error("Error updating note:", err);
+            return res.status(500).json({ error: "Failed to update note" });
+        }
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "Note not found" });
+        }
+        res.status(200).json({ message: "Note updated successfully" });
+    });
+});
 
 //////////////////////////////////////////////////////////////
 
