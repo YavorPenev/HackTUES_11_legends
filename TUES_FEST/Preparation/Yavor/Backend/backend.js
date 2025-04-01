@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require("mysql2");
 require("dotenv").config();
-const app = express();
+const app = express();// suzsawa obekt na syrwura
 const cors = require("cors");
 
 app.use(express.json()); //Middleware за парсване на JSON
@@ -16,7 +16,7 @@ app.use(cors(corsOptions));
 
 ////////////////////////////////////////////////////
 
-const db = mysql.createConnection({
+const db = mysql.createConnection({// syzsawa obekt na database
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -35,7 +35,7 @@ db.connect((err) => {
 
 /////////////////////////////////////////////////////
 
-app.post("/add", (req, res) => {
+app.post("/add", (req, res) => {// pra]a inf na servera
     const { title, body } = req.body;// превеъща в json формат
 
     if (!title || !body) {
@@ -43,7 +43,7 @@ app.post("/add", (req, res) => {
     }
 
     const sql = "INSERT INTO notes (title, body) VALUES (?, ?)";
-    db.query(sql, [title, body], (err, result) => {
+    db.query(sql, [title, body], (err, result) => {// zapiswa wbazata danni
         if (err) {
             console.error("Error inserting note:", err);
             return res.status(500).json({ error: "Failed to insert note" });
